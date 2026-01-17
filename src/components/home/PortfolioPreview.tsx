@@ -2,100 +2,165 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TiltCard, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
+import { useState } from "react";
 
 const projects = [
   {
     title: "E-Commerce Growth Strategy",
     category: "SEO & PPC",
     result: "+340% Revenue",
+    description: "Complete digital transformation for a leading e-commerce brand",
     color: "from-electric to-electric-light",
+    metrics: { before: "50K", after: "220K", label: "Monthly Revenue" },
   },
   {
     title: "Brand Awareness Campaign",
     category: "Social Media",
     result: "2M+ Impressions",
+    description: "Viral campaign that reached millions across platforms",
     color: "from-orange to-orange-light",
+    metrics: { before: "10K", after: "2M", label: "Monthly Reach" },
   },
   {
     title: "Lead Generation System",
     category: "Content Marketing",
     result: "500+ Qualified Leads",
+    description: "Automated funnel that delivers consistent high-quality leads",
     color: "from-navy to-navy-light",
+    metrics: { before: "20", after: "500+", label: "Monthly Leads" },
   },
 ];
 
 const PortfolioPreview = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
+        <ScrollReveal animation="fadeUp" className="text-center mb-16">
+          <motion.span 
+            className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4"
+            whileHover={{ scale: 1.05 }}
+          >
             Our Work
-          </span>
+          </motion.span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Featured <span className="text-gradient-blue">Case Studies</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Real results for real businesses. Explore how we've helped our clients achieve their goals.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.15}>
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-90`} />
-              
-              <div className="absolute inset-0 p-8 flex flex-col justify-between text-primary-foreground">
-                <div>
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary-foreground/20 text-sm font-medium mb-4">
-                    {project.category}
-                  </span>
-                  <h3 className="font-heading text-2xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                </div>
+            <StaggerItem key={index}>
+              <TiltCard
+                className="relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
+                maxTilt={12}
+                glareEnabled={true}
+                liftOnHover={true}
+              >
+                <motion.div
+                  className={`absolute inset-0 bg-gradient-to-br ${project.color}`}
+                  initial={{ opacity: 0.9 }}
+                  whileHover={{ opacity: 1 }}
+                />
                 
-                <div className="flex items-end justify-between">
+                {/* Animated background pattern */}
+                <motion.div
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 50% 50%, white 1px, transparent 1px)`,
+                    backgroundSize: '20px 20px',
+                  }}
+                  animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                
+                <div 
+                  className="absolute inset-0 p-8 flex flex-col justify-between text-primary-foreground"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                   <div>
-                    <p className="text-primary-foreground/70 text-sm mb-1">Result</p>
-                    <p className="font-heading text-3xl font-bold">{project.result}</p>
+                    <motion.span 
+                      className="inline-block px-3 py-1 rounded-full bg-primary-foreground/20 text-sm font-medium mb-4"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {project.category}
+                    </motion.span>
+                    <h3 className="font-heading text-2xl font-semibold mb-2">
+                      {project.title}
+                    </h3>
+                    
+                    {/* Description reveals on hover */}
+                    <motion.p
+                      className="text-primary-foreground/70 text-sm"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={hoveredIndex === index ? { opacity: 1, height: 'auto' } : {}}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {project.description}
+                    </motion.p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:bg-primary-foreground group-hover:text-navy transition-all duration-300">
-                    <ExternalLink className="w-5 h-5" />
+                  
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-primary-foreground/70 text-sm mb-1">Result</p>
+                      <motion.p 
+                        className="font-heading text-3xl font-bold"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {project.result}
+                      </motion.p>
+
+                      {/* Before/After metrics on hover */}
+                      <motion.div
+                        className="flex items-center gap-2 mt-2"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={hoveredIndex === index ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                      >
+                        <span className="text-primary-foreground/60 text-xs">{project.metrics.before}</span>
+                        <ArrowRight className="w-3 h-3" />
+                        <span className="text-primary-foreground text-xs font-bold">{project.metrics.after}</span>
+                        <span className="text-primary-foreground/60 text-xs">• {project.metrics.label}</span>
+                      </motion.div>
+                    </div>
+
+                    <motion.div 
+                      className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        backgroundColor: "rgba(255,255,255,1)",
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ExternalLink className="w-5 h-5 group-hover:text-navy" />
+                    </motion.div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </TiltCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12"
-        >
-          <Button variant="default" size="lg" asChild>
+        <ScrollReveal animation="fadeUp" delay={0.3} className="text-center mt-12">
+          <Button variant="default" size="lg" asChild className="group">
             <Link to="/portfolio">
               View All Projects
-              <ArrowRight className="w-4 h-4" />
+              <motion.span
+                className="inline-block ml-2"
+                whileHover={{ x: 5 }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
             </Link>
           </Button>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );
