@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { AnalyticsCube } from "@/components/3d";
 
 const services = [
   {
@@ -182,8 +183,15 @@ const Services = () => {
                       : index % 3 === 1 
                         ? "gradient-orange" 
                         : "gradient-hero"
-                  } opacity-90 flex items-center justify-center`}>
-                    <service.icon className="w-32 h-32 text-primary-foreground/30" />
+                  } opacity-90 flex items-center justify-center relative overflow-hidden`}>
+                    {/* Show 3D model for Analytics service */}
+                    {service.title.includes("Analytics") ? (
+                      <div className="absolute inset-0">
+                        <AnalyticsCube />
+                      </div>
+                    ) : (
+                      <service.icon className="w-32 h-32 text-primary-foreground/30" />
+                    )}
                   </div>
                 </div>
               </motion.div>
