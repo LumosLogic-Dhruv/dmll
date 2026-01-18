@@ -10,7 +10,6 @@ import {
   ParticleBackground,
 } from "@/components/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { FloatingRocket } from "@/components/3d";
 
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -137,21 +136,27 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - 3D Rocket */}
+          {/* Right Content - Floating Stats */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             className="flex-1 relative hidden lg:block"
           >
-            <div className="relative w-full h-[500px]">
-              <FloatingRocket className="absolute inset-0" />
+            <div className="relative w-full h-[400px] flex items-center justify-center">
+              {/* Central Glow */}
+              <motion.div
+                className="absolute w-64 h-64 rounded-full bg-gradient-to-br from-electric/30 to-orange/20 blur-3xl"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
               
-              {/* Floating Stats around the 3D model */}
+              {/* Floating Stats */}
               {[
-                { value: "150%", label: "ROI", position: "top-8 right-0" },
-                { value: "10M+", label: "Leads", position: "bottom-20 left-0" },
-                { value: "98%", label: "Retention", position: "top-1/3 -left-4" },
+                { value: "150%", label: "ROI", position: "top-8 right-8" },
+                { value: "10M+", label: "Leads", position: "bottom-16 left-4" },
+                { value: "98%", label: "Retention", position: "top-1/4 left-8" },
+                { value: "500+", label: "Clients", position: "bottom-8 right-16" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -163,10 +168,10 @@ const Hero = () => {
                     stiffness: 150 
                   }}
                   whileHover={{ scale: 1.1 }}
-                  className={`absolute ${stat.position} bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-xl px-4 py-3 cursor-pointer`}
+                  className={`absolute ${stat.position} bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-xl px-5 py-4 cursor-pointer`}
                 >
-                  <p className="font-heading text-xl font-bold text-primary-foreground">{stat.value}</p>
-                  <p className="text-primary-foreground/60 text-xs">{stat.label}</p>
+                  <p className="font-heading text-2xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-primary-foreground/60 text-sm">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
