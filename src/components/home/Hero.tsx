@@ -10,6 +10,7 @@ import {
   ParticleBackground,
 } from "@/components/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { FloatingRocket } from "@/components/3d";
 
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -136,48 +137,36 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Stats Cards */}
+          {/* Right Content - 3D Rocket */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="flex-1 relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+            className="flex-1 relative hidden lg:block"
           >
-            <div className="relative grid grid-cols-2 gap-4 max-w-md mx-auto">
+            <div className="relative w-full h-[500px]">
+              <FloatingRocket className="absolute inset-0" />
+              
+              {/* Floating Stats around the 3D model */}
               {[
-                { value: "150%", label: "Avg. ROI Increase", delay: 0.4 },
-                { value: "10M+", label: "Leads Generated", delay: 0.5 },
-                { value: "98%", label: "Client Retention", delay: 0.6 },
-                { value: "24/7", label: "Expert Support", delay: 0.7 },
+                { value: "150%", label: "ROI", position: "top-8 right-0" },
+                { value: "10M+", label: "Leads", position: "bottom-20 left-0" },
+                { value: "98%", label: "Retention", position: "top-1/3 -left-4" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ 
-                    delay: stat.delay, 
-                    duration: 0.5,
+                    delay: 1 + index * 0.2, 
                     type: "spring",
                     stiffness: 150 
                   }}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    y: -5,
-                    boxShadow: "0 20px 40px -10px rgba(0, 102, 255, 0.3)"
-                  }}
-                  className={`bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-2xl p-6 cursor-pointer transition-colors hover:border-electric/50 ${
-                    index === 1 ? "mt-8" : index === 2 ? "-mt-8" : ""
-                  }`}
+                  whileHover={{ scale: 1.1 }}
+                  className={`absolute ${stat.position} bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-xl px-4 py-3 cursor-pointer`}
                 >
-                  <motion.p 
-                    className="font-heading text-3xl sm:text-4xl font-bold text-primary-foreground mb-1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: stat.delay + 0.3 }}
-                  >
-                    {stat.value}
-                  </motion.p>
-                  <p className="text-primary-foreground/60 text-sm">{stat.label}</p>
+                  <p className="font-heading text-xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-primary-foreground/60 text-xs">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

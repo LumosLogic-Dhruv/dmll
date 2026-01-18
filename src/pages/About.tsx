@@ -9,6 +9,7 @@ import {
   Linkedin,
   Twitter
 } from "lucide-react";
+import { GrowthGraph } from "@/components/3d";
 
 const team = [
   {
@@ -141,8 +142,14 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-square rounded-3xl gradient-blue opacity-90 flex items-center justify-center">
-                <div className="text-center text-primary-foreground">
+              <div className="aspect-square rounded-3xl gradient-blue opacity-90 flex items-center justify-center relative overflow-hidden">
+                {/* 3D Growth Graph */}
+                <div className="absolute inset-0">
+                  <GrowthGraph />
+                </div>
+                
+                {/* Overlay Text */}
+                <div className="text-center text-primary-foreground relative z-10 bg-navy/40 backdrop-blur-sm rounded-2xl px-6 py-4">
                   <p className="font-heading text-6xl font-bold mb-2">9+</p>
                   <p className="text-primary-foreground/70">Years of Excellence</p>
                 </div>
