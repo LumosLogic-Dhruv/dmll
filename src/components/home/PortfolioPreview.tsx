@@ -95,15 +95,10 @@ const PortfolioPreview = () => {
                       {project.title}
                     </h3>
                     
-                    {/* Description reveals on hover */}
-                    <motion.p
-                      className="text-primary-foreground/70 text-sm"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={hoveredIndex === index ? { opacity: 1, height: 'auto' } : {}}
-                      transition={{ duration: 0.3 }}
-                    >
+                    {/* Description - always visible */}
+                    <p className="text-primary-foreground/80 text-sm mt-2">
                       {project.description}
-                    </motion.p>
+                    </p>
                   </div>
                   
                   <div className="flex items-end justify-between">
@@ -117,18 +112,13 @@ const PortfolioPreview = () => {
                         {project.result}
                       </motion.p>
 
-                      {/* Before/After metrics on hover */}
-                      <motion.div
-                        className="flex items-center gap-2 mt-2"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={hoveredIndex === index ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                      >
-                        <span className="text-primary-foreground/60 text-xs">{project.metrics.before}</span>
-                        <ArrowRight className="w-3 h-3" />
+                      {/* Before/After metrics - always visible */}
+                      <div className="flex items-center gap-2 mt-2 flex-wrap">
+                        <span className="text-primary-foreground/70 text-xs">{project.metrics.before}</span>
+                        <ArrowRight className="w-3 h-3 text-primary-foreground/70" />
                         <span className="text-primary-foreground text-xs font-bold">{project.metrics.after}</span>
-                        <span className="text-primary-foreground/60 text-xs">• {project.metrics.label}</span>
-                      </motion.div>
+                        <span className="text-primary-foreground/70 text-xs">• {project.metrics.label}</span>
+                      </div>
                     </div>
 
                     <motion.div 
