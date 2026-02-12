@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 const insights = [
   {
     id: 1,
-    title: "The Future of Performance Marketing in 2026",
+    title: "How to Reduce CPA by 40% Without Cutting Ad Spend",
     excerpt:
-      "AI-driven attribution, privacy-first targeting, and the metrics that actually matter.",
-    category: "Strategy",
+      "Campaign restructuring, audience layering, and bid strategies that lower acquisition cost while maintaining volume.",
+    category: "Paid Media",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     date: "Feb 8, 2026",
@@ -17,10 +17,10 @@ const insights = [
   },
   {
     id: 2,
-    title: "How We Achieved 540% Organic Growth for a SaaS Startup",
+    title: "SEO Ranking Strategy: How We Generated $1.2M in Pipeline",
     excerpt:
-      "A detailed breakdown of our SEO strategy that generated $1.2M in pipeline.",
-    category: "Case Study",
+      "Keyword clustering, content mapping, and technical SEO fixes that drove 540% organic growth for a B2B SaaS.",
+    category: "SEO",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     date: "Feb 4, 2026",
@@ -28,10 +28,10 @@ const insights = [
   },
   {
     id: 3,
-    title: "The Death of Third-Party Cookies: What It Means for Your Strategy",
+    title: "Scaling Google Ads Profitably: A Step-by-Step Framework",
     excerpt:
-      "Adapting your marketing stack for a privacy-first digital landscape.",
-    category: "Industry",
+      "Budget allocation, campaign structure, and bidding strategies to scale paid search without destroying ROAS.",
+    category: "Paid Media",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
     date: "Jan 28, 2026",
@@ -56,7 +56,7 @@ const InsightsPreview = () => {
               Insights
             </span>
             <h2 className="text-display-sm md:text-display-md text-foreground">
-              Latest thinking
+              Marketing playbooks
             </h2>
           </div>
           <Button variant="outline" asChild>

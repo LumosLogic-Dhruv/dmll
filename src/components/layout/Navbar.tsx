@@ -36,7 +36,7 @@ const navLinks = [
 const serviceCategories = [
   {
     title: "Performance Marketing",
-    description: "Drive measurable results",
+    description: "Lower CPA, increase ROAS",
     services: [
       {
         icon: Target,
@@ -66,7 +66,7 @@ const serviceCategories = [
   },
   {
     title: "Organic Growth",
-    description: "Sustainable traffic growth",
+    description: "Rank higher, increase leads",
     services: [
       {
         icon: Search,
@@ -96,7 +96,7 @@ const serviceCategories = [
   },
   {
     title: "Brand & Creative",
-    description: "Build memorable brands",
+    description: "Build demand, generate pipeline",
     services: [
       {
         icon: Users,
@@ -126,7 +126,7 @@ const serviceCategories = [
   },
   {
     title: "Web & Automation",
-    description: "Technology-driven solutions",
+    description: "Convert more, automate growth",
     services: [
       {
         icon: Globe,
@@ -326,7 +326,7 @@ const Navbar = () => {
                   <div className="col-span-2 border-r border-border pr-6">
                     <h3 className="font-bold text-lg mb-2">Services</h3>
                     <p className="text-sm text-muted-foreground mb-6">
-                      Full-service digital marketing solutions to accelerate your growth.
+                      Campaign management, SEO, and CRO that improve your marketing KPIs.
                     </p>
                     <Button variant="outline" size="sm" asChild>
                       <Link to="/services" className="gap-2">

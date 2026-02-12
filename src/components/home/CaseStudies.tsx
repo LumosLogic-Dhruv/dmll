@@ -13,7 +13,7 @@ const caseStudies = [
       { value: "+312%", label: "ROAS" },
       { value: "4.8X", label: "Revenue" },
     ],
-    description: "Scaled MRR from $50K to $240K through strategic paid acquisition and funnel optimization.",
+    description: "Campaign restructuring + funnel optimization. Scaled MRR from $50K to $240K through Google Ads and retargeting layers.",
     link: "/portfolio/techflow",
   },
   {
@@ -25,7 +25,7 @@ const caseStudies = [
       { value: "+540%", label: "Organic Traffic" },
       { value: "120+", label: "Leads/Month" },
     ],
-    description: "Dominated local SEO and built a content engine driving 120+ qualified leads monthly.",
+    description: "Keyword clustering + technical SEO overhaul. Built a content engine driving 120+ qualified leads monthly from organic search.",
     link: "/portfolio/urban-fitness",
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
       { value: "$2.4M", label: "Revenue" },
       { value: "280%", label: "ROAS" },
     ],
-    description: "Transformed a local business into a national e-commerce brand with $2.4M annual revenue.",
+    description: "Meta Ads + Google Shopping restructuring with retargeting layers. Scaled from local to national with attribution tracking.",
     link: "/portfolio/luxe-interiors",
   },
 ];
@@ -141,10 +141,10 @@ const CaseStudies = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "$50M+", label: "Revenue Generated" },
-              { value: "500+", label: "Campaigns Launched" },
-              { value: "312%", label: "Average ROAS" },
-              { value: "98%", label: "Client Satisfaction" },
+              { value: "$50M+", label: "Ad Spend Managed" },
+              { value: "500+", label: "Campaigns Optimized" },
+              { value: "312%", label: "Avg. ROAS Delivered" },
+              { value: "-41%", label: "Avg. CPA Reduction" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl md:text-4xl font-bold text-background mb-1">

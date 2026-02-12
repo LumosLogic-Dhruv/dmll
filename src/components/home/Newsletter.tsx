@@ -41,11 +41,11 @@ const Newsletter = () => {
               </motion.div>
 
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-                Stay Ahead of the Curve
+                Weekly Marketing Performance Insights
               </h2>
               <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
-                Get weekly insights, tips, and strategies delivered straight to your inbox. 
-                Join 10,000+ marketers who stay informed with our newsletter.
+                Tactics to reduce CPA, improve ROAS, and scale campaigns profitably.
+                Join 10,000+ marketing operators who read this every week.
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

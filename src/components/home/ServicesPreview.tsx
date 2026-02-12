@@ -8,33 +8,33 @@ const services = [
     icon: Target,
     title: "Performance Marketing",
     description:
-      "Data-driven paid media strategies across Google, Meta, and LinkedIn that maximize ROI and scale revenue.",
+      "Google Ads, Meta Ads, and LinkedIn campaigns optimized daily to lower your CPA and increase ROAS across every channel.",
     link: "/services/performance",
-    stats: "Avg. 312% ROAS",
+    stats: "Avg. 312% ROAS | -41% CPA",
   },
   {
     icon: Search,
     title: "Organic Growth",
     description:
-      "Strategic SEO and content marketing that builds sustainable traffic and establishes market authority.",
+      "Keyword clustering, technical SEO, and content strategy that ranks you higher on Google and drives qualified inbound leads.",
     link: "/services/seo",
-    stats: "+540% organic traffic",
+    stats: "+540% organic traffic | 120+ leads/mo",
   },
   {
     icon: Palette,
     title: "Brand & Creative",
     description:
-      "Compelling brand identities and creative campaigns that resonate with audiences and drive engagement.",
+      "Paid social, organic content, and engagement campaigns that build brand demand and generate pipeline from social channels.",
     link: "/services/branding",
-    stats: "4.8X engagement lift",
+    stats: "4.8X engagement | 3.2X pipeline lift",
   },
   {
     icon: Globe,
     title: "Web & Automation",
     description:
-      "High-converting websites and marketing automation systems that turn visitors into customers.",
+      "Landing pages, funnel optimization, and marketing automation that improve conversion rate and revenue per visitor.",
     link: "/services/web",
-    stats: "65% conversion increase",
+    stats: "+65% conversion rate | 2.1X revenue/visitor",
   },
 ];
 
@@ -73,11 +73,11 @@ const ServicesPreview = () => {
             Our Services
           </span>
           <h2 className="text-display-sm md:text-display-md lg:text-display-lg text-foreground mb-6">
-            Full-spectrum digital marketing expertise
+            Every channel. Every metric. Fully managed.
           </h2>
           <p className="text-lg text-muted-foreground">
-            From acquisition to retention, we architect growth strategies that
-            deliver measurable results across every touchpoint.
+            We operate your paid campaigns, SEO, social, and conversion funnels
+            so every marketing dollar drives measurable pipeline and revenue.
           </p>
         </motion.div>
 

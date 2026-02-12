@@ -5,30 +5,30 @@ const steps = [
   {
     number: "01",
     icon: Search,
-    title: "Discover",
+    title: "Audit",
     description:
-      "Deep dive into your business, market, and competitors to identify growth opportunities.",
+      "Analyze your current campaigns, traffic sources, conversion funnels, and competitor positioning to find gaps.",
   },
   {
     number: "02",
     icon: Lightbulb,
-    title: "Strategize",
+    title: "Plan",
     description:
-      "Craft a data-driven roadmap with clear milestones and measurable objectives.",
+      "Build a channel strategy with target KPIs: CPA goals, ROAS targets, keyword clusters, and funnel milestones.",
   },
   {
     number: "03",
     icon: Rocket,
-    title: "Execute",
+    title: "Launch",
     description:
-      "Launch optimized campaigns with precision targeting and continuous iteration.",
+      "Deploy campaigns across Google, Meta, LinkedIn, and organic channels with tracking and attribution in place.",
   },
   {
     number: "04",
     icon: TrendingUp,
-    title: "Scale",
+    title: "Optimize",
     description:
-      "Amplify what works, expand reach, and systematically grow your market share.",
+      "Weekly bid adjustments, A/B tests, audience refinements, and budget reallocation to maximize ROAS.",
   },
 ];
 
@@ -45,14 +45,14 @@ const Process = () => {
           className="text-center max-w-2xl mx-auto mb-20"
         >
           <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
-            Our Process
+            Campaign Workflow
           </span>
           <h2 className="text-display-sm md:text-display-md text-foreground mb-6">
-            A proven framework for growth
+            How we improve your marketing performance
           </h2>
           <p className="text-lg text-muted-foreground">
-            Our systematic approach ensures consistent results across every
-            engagement.
+            A structured process from audit to optimization that delivers
+            measurable improvements in traffic, leads, and revenue.
           </p>
         </motion.div>
 

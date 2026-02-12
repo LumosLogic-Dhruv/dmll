@@ -26,13 +26,13 @@ const CTASection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-display-sm md:text-display-md lg:text-display-lg text-background mb-6">
-              Ready to engineer
+              Ready to lower your CPA
               <br />
-              your growth?
+              and scale revenue?
             </h2>
             <p className="text-lg md:text-xl text-background/70 mb-10 max-w-2xl mx-auto">
-              Let's discuss how we can help you achieve measurable results and
-              dominate your market.
+              Book a free growth strategy session. We'll audit your campaigns,
+              identify wasted spend, and map out a plan to improve your ROAS.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -68,8 +68,8 @@ const CTASection = () => {
           >
             <div className="grid grid-cols-3 gap-8">
               {[
-                { value: "48hr", label: "Response Time" },
-                { value: "Free", label: "Initial Consultation" },
+                { value: "48hr", label: "Audit Turnaround" },
+                { value: "Free", label: "Campaign Audit" },
                 { value: "0", label: "Long-Term Contracts" },
               ].map((item) => (
                 <div key={item.label}>

@@ -24,7 +24,7 @@ const projects = [
       { value: "4.8X", label: "MRR Growth" },
     ],
     description:
-      "Scaled a B2B SaaS company from $50K to $240K MRR through strategic paid acquisition and funnel optimization.",
+      "Situation: Stalled MRR at $50K. Strategy: Campaign restructuring + retargeting layers. Execution: Google Ads rebuild + funnel optimization. Result: $240K MRR.",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
     link: "/portfolio/techflow",
   },
@@ -38,7 +38,7 @@ const projects = [
       { value: "280%", label: "ROAS" },
     ],
     description:
-      "Transformed a local boutique into a national e-commerce brand with $2.4M annual revenue.",
+      "Situation: Local-only sales. Strategy: Meta Ads + Google Shopping scaling. Execution: Audience layering + attribution tracking. Result: $2.4M annual revenue.",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
     link: "/portfolio/stylehouse",
   },
@@ -52,7 +52,7 @@ const projects = [
       { value: "120+", label: "Leads/Mo" },
     ],
     description:
-      "Built a content engine and SEO strategy that drives 120+ qualified leads monthly.",
+      "Situation: Zero organic pipeline. Strategy: Keyword clustering + content engine. Execution: Technical SEO + link building. Result: 120+ qualified leads/mo.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
     link: "/portfolio/healthplus",
   },
@@ -66,7 +66,7 @@ const projects = [
       { value: "+180%", label: "Appointments" },
     ],
     description:
-      "Dominated local search results in a competitive market, driving 180% increase in appointments.",
+      "Situation: Invisible in local search. Strategy: GBP optimization + local keyword targeting. Execution: Citation building + review generation. Result: #1 local ranking.",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop",
     link: "/portfolio/citydental",
   },
@@ -80,7 +80,7 @@ const projects = [
       { value: "+200%", label: "Brand Recall" },
     ],
     description:
-      "Complete brand overhaul that repositioned a legacy company for the modern market.",
+      "Situation: Low engagement, weak positioning. Strategy: Brand repositioning + paid social. Execution: Creative testing + audience targeting. Result: 4.8X engagement lift.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
     link: "/portfolio/innovate",
   },
@@ -94,7 +94,7 @@ const projects = [
       { value: "2.1X", label: "Pipeline" },
     ],
     description:
-      "Redesigned website and funnel resulting in 65% conversion lift and doubled pipeline.",
+      "Situation: High traffic, low conversions. Strategy: CRO audit + funnel redesign. Execution: A/B testing + landing page optimization. Result: +65% conversion rate.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     link: "/portfolio/growthlabs",
   },
@@ -136,13 +136,13 @@ const Portfolio = () => {
               Case Studies
             </span>
             <h1 className="text-display-lg md:text-display-xl text-foreground mb-6">
-              Results that speak
+              Before and after
               <br />
-              <span className="text-muted-foreground">for themselves</span>
+              <span className="text-muted-foreground">campaign metrics.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Explore how we've helped businesses across industries achieve
-              remarkable growth through strategic digital marketing.
+              Every case follows the same structure: Situation, Strategy, Execution, Result.
+              See the measurable improvements we delivered across channels.
             </p>
           </motion.div>
         </div>
@@ -287,7 +287,7 @@ const Portfolio = () => {
               next success story?
             </h2>
             <p className="text-background/70 text-lg mb-8">
-              Let's discuss how we can help you achieve similar results.
+              Get a free campaign audit and see where your marketing performance can improve.
             </p>
             <Button
               variant="secondary"
@@ -296,7 +296,7 @@ const Portfolio = () => {
               asChild
             >
               <Link to="/contact">
-                Start Your Growth Journey
+                Request a Free Campaign Audit
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>

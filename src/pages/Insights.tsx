@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 const insights = [
   {
     id: 1,
-    title: "The Future of Performance Marketing in 2026",
+    title: "How to Reduce CPA by 40% Without Cutting Ad Spend",
     excerpt:
-      "AI-driven attribution, privacy-first targeting, and the metrics that actually matter for modern paid media.",
-    category: "Strategy",
+      "Campaign restructuring, negative keyword expansion, and audience layering strategies that lower acquisition cost while maintaining volume.",
+    category: "Paid Media",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     date: "Feb 8, 2026",
@@ -18,10 +18,10 @@ const insights = [
   },
   {
     id: 2,
-    title: "How We Achieved 540% Organic Growth for a SaaS Startup",
+    title: "SEO Ranking Strategy: How We Generated $1.2M in Pipeline",
     excerpt:
-      "A detailed breakdown of our SEO strategy that generated $1.2M in pipeline within 6 months.",
-    category: "Case Study",
+      "Keyword clustering, topic mapping, and technical SEO fixes that drove 540% organic growth and $1.2M in qualified pipeline.",
+    category: "SEO",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     date: "Feb 4, 2026",
@@ -29,10 +29,10 @@ const insights = [
   },
   {
     id: 3,
-    title: "The Death of Third-Party Cookies: What It Means for Your Strategy",
+    title: "How to Scale Google Ads Profitably Past $50K/Month",
     excerpt:
-      "Adapting your marketing stack for a privacy-first digital landscape.",
-    category: "Industry",
+      "Budget allocation frameworks, campaign structure, and bidding strategies to scale paid search without destroying ROAS.",
+    category: "Paid Media",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
     date: "Jan 28, 2026",
@@ -40,10 +40,10 @@ const insights = [
   },
   {
     id: 4,
-    title: "Building a Content Engine That Scales",
+    title: "Conversion Rate Experiments That Actually Move Revenue",
     excerpt:
-      "How to create a systematic content production process that drives consistent organic growth.",
-    category: "Content",
+      "15 high-impact CRO tests we've run across landing pages, checkout flows, and lead forms with before/after data.",
+    category: "CRO",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
     date: "Jan 21, 2026",
@@ -51,9 +51,9 @@ const insights = [
   },
   {
     id: 5,
-    title: "LinkedIn Ads for B2B: A Complete Guide",
+    title: "LinkedIn Ads for B2B: Lower CPL and Generate Qualified Pipeline",
     excerpt:
-      "Everything you need to know about running profitable LinkedIn advertising campaigns.",
+      "Account-based targeting, lead gen forms, and InMail sequences that reduce cost per lead and improve pipeline quality.",
     category: "Paid Media",
     readTime: "15 min read",
     image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=600&h=400&fit=crop",
@@ -62,9 +62,9 @@ const insights = [
   },
   {
     id: 6,
-    title: "The ROI of Marketing Automation",
+    title: "Marketing Automation That Increases Revenue Per Lead by 2X",
     excerpt:
-      "Quantifying the impact of automation on marketing efficiency and revenue growth.",
+      "Lead scoring models, behavioral triggers, and drip sequences that doubled revenue per lead for our clients.",
     category: "Automation",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
@@ -73,7 +73,7 @@ const insights = [
   },
 ];
 
-const categories = ["All", "Strategy", "Case Study", "Paid Media", "Content", "Industry", "Automation"];
+const categories = ["All", "Paid Media", "SEO", "CRO", "Automation"];
 
 const Insights = () => {
   const featuredInsights = insights.filter((i) => i.featured);
@@ -96,13 +96,13 @@ const Insights = () => {
               Insights
             </span>
             <h1 className="text-display-lg md:text-display-xl text-foreground mb-6">
-              Ideas that drive
+              Marketing playbooks
               <br />
-              <span className="text-muted-foreground">growth forward.</span>
+              <span className="text-muted-foreground">that improve KPIs.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Strategic insights, industry analysis, and tactical guides from our
-              team of digital marketing experts.
+              Tactical guides on reducing CPA, improving ROAS, ranking higher on Google,
+              and scaling campaigns profitably. Written by operators, not theorists.
             </p>
           </motion.div>
         </div>
@@ -283,11 +283,11 @@ const Insights = () => {
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-display-sm md:text-display-md text-background mb-6">
-              Get weekly growth insights
+              Weekly campaign optimization tips
             </h2>
             <p className="text-background/70 text-lg mb-8">
-              Join 10,000+ marketers who receive our weekly digest of strategy,
-              tactics, and industry news.
+              Join 10,000+ marketing operators who receive our weekly digest of
+              CPA reduction tactics, ROAS strategies, and SEO ranking playbooks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input

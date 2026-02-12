@@ -14,51 +14,51 @@ import {
 const plans = [
   {
     name: "Growth",
-    description: "For startups ready to scale",
+    description: "For startups ready to generate leads",
     monthlyPrice: 3500,
     annualPrice: 2800,
     popular: false,
     features: [
-      "Performance marketing (1 platform)",
-      "Basic SEO optimization",
-      "Monthly analytics & reporting",
+      "Google Ads or Meta Ads management",
+      "Basic SEO & keyword tracking",
+      "Monthly ROAS & CPA reporting",
       "Email support",
-      "Dedicated account manager",
-      "Bi-weekly strategy calls",
+      "Dedicated campaign manager",
+      "Bi-weekly optimization calls",
     ],
   },
   {
     name: "Scale",
-    description: "For businesses ready to dominate",
+    description: "For businesses scaling paid + organic channels",
     monthlyPrice: 7500,
     annualPrice: 6000,
     popular: true,
     features: [
-      "Multi-platform advertising",
+      "Google + Meta + LinkedIn Ads",
       "Full SEO & content strategy",
-      "Content marketing (4 pieces/mo)",
-      "Weekly reporting & calls",
-      "Conversion optimization",
-      "Marketing automation",
-      "Social media management",
+      "4 SEO articles/month",
+      "Weekly ROAS & CPA reporting",
+      "A/B testing & CRO",
+      "Marketing automation setup",
+      "Retargeting & audience layering",
       "Priority support",
     ],
   },
   {
     name: "Enterprise",
-    description: "For market leaders",
+    description: "For teams managing $25K+/mo in ad spend",
     monthlyPrice: null,
     annualPrice: null,
     popular: false,
     features: [
       "All Scale features",
-      "Custom integrations",
-      "Dedicated team (3+ members)",
+      "Custom attribution setup",
+      "Dedicated team (3+ specialists)",
       "24/7 priority support",
-      "Strategic consulting",
-      "Multi-market expansion",
-      "Executive reporting",
-      "Custom SLAs",
+      "CMO-level strategy consulting",
+      "Multi-market campaign scaling",
+      "Executive ROAS dashboards",
+      "Custom SLAs & KPI targets",
     ],
   },
 ];
@@ -123,8 +123,8 @@ const Pricing = () => {
               <span className="text-muted-foreground">for ROI</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Transparent pricing with no hidden fees. Every plan includes dedicated
-              support and measurable results.
+              Transparent pricing tied to performance outcomes. Every plan includes
+              campaign management, optimization cycles, and KPI reporting.
             </p>
 
             {/* Billing Toggle */}
@@ -360,12 +360,12 @@ const Pricing = () => {
               Not sure which plan is right?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Book a free strategy call and we'll help you find the perfect solution
-              for your business goals.
+              Book a free strategy session. We'll audit your current campaigns and
+              recommend which plan matches your KPI targets.
             </p>
             <Button variant="cta" size="xl" asChild>
               <Link to="/contact">
-                Schedule Free Consultation
+                Request Growth Strategy Session
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>

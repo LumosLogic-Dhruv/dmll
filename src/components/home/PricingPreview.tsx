@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Growth",
-    description: "For startups ready to scale",
+    description: "For startups ready to generate leads",
     price: "$3,500",
     period: "/month",
     features: [
@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: "Scale",
-    description: "For businesses ready to dominate",
+    description: "For businesses scaling paid + organic",
     price: "$7,500",
     period: "/month",
     features: [
@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    description: "For market leaders",
+    description: "For teams managing $25K+/mo in ad spend",
     price: "Custom",
     period: "",
     features: [
@@ -72,8 +72,8 @@ const PricingPreview = () => {
             Investment built for ROI
           </h2>
           <p className="text-lg text-muted-foreground">
-            Transparent pricing with no hidden fees. Every plan includes
-            dedicated support and measurable results.
+            Transparent pricing tied to performance outcomes. Every plan includes
+            campaign management, reporting, and optimization.
           </p>
         </motion.div>
 

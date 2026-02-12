@@ -25,126 +25,126 @@ import { Link } from "react-router-dom";
 
 const serviceCategories = [
   {
-    title: "Performance Marketing",
-    description: "Data-driven campaigns that maximize ROI",
+    title: "Acquire Customers",
+    description: "Drive qualified traffic and generate leads through paid and organic channels",
     icon: Target,
     services: [
       {
         icon: Target,
         name: "Google Ads",
-        description: "Search, Display, Shopping, and YouTube campaigns optimized for conversions.",
-        features: ["Keyword research", "Ad copy optimization", "Bid management", "Landing page optimization"],
+        description: "Search, Display, Shopping, and YouTube campaigns. Improves CPA and ROAS. Results visible in 2-4 weeks.",
+        features: ["Keyword research & negatives", "Ad copy A/B testing", "Bid strategy optimization", "Quality Score improvement"],
       },
       {
         icon: Megaphone,
         name: "Meta Ads",
-        description: "Facebook and Instagram advertising with advanced audience targeting.",
-        features: ["Audience building", "Creative testing", "Retargeting", "Catalog sales"],
+        description: "Facebook & Instagram ads. Solves high acquisition cost and low pipeline. Results in 2-3 weeks.",
+        features: ["Lookalike audiences", "Creative A/B testing", "Retargeting layers", "Catalog & dynamic ads"],
       },
       {
         icon: Linkedin,
         name: "LinkedIn Ads",
-        description: "B2B lead generation through professional network advertising.",
-        features: ["Account targeting", "Lead gen forms", "Sponsored content", "InMail campaigns"],
+        description: "B2B pipeline generation. Solves low qualified lead volume. Results in 3-4 weeks.",
+        features: ["Account-based targeting", "Lead gen forms", "Sponsored content", "InMail sequences"],
       },
+      {
+        icon: Search,
+        name: "SEO & Organic Growth",
+        description: "Improves organic traffic and inbound lead volume. Solves low search visibility. Results in 3-6 months.",
+        features: ["Keyword clustering", "Technical SEO audits", "Content strategy", "Link building"],
+      },
+    ],
+  },
+  {
+    title: "Convert Visitors",
+    description: "Turn traffic into leads and leads into customers with optimized funnels",
+    icon: TrendingUp,
+    services: [
       {
         icon: TrendingUp,
         name: "Conversion Optimization",
-        description: "A/B testing and CRO to maximize conversion rates.",
-        features: ["Heatmap analysis", "User testing", "Funnel optimization", "Multivariate testing"],
+        description: "Improves conversion rate and revenue per visitor. Solves high traffic but low conversions. Results in 4-8 weeks.",
+        features: ["Heatmap analysis", "A/B & multivariate testing", "Funnel drop-off analysis", "Landing page optimization"],
       },
-    ],
-  },
-  {
-    title: "Organic Growth",
-    description: "Sustainable traffic and authority building",
-    icon: Search,
-    services: [
-      {
-        icon: Search,
-        name: "SEO Strategy",
-        description: "Comprehensive search optimization for long-term organic growth.",
-        features: ["Keyword strategy", "Content optimization", "Link building", "Technical audits"],
-      },
-      {
-        icon: Settings,
-        name: "Technical SEO",
-        description: "Site structure, speed, and crawlability optimization.",
-        features: ["Core Web Vitals", "Schema markup", "Site architecture", "Mobile optimization"],
-      },
-      {
-        icon: MapPin,
-        name: "Local SEO",
-        description: "Dominate local search results and drive foot traffic.",
-        features: ["Google Business Profile", "Local citations", "Review management", "Local content"],
-      },
-      {
-        icon: FileText,
-        name: "Content Marketing",
-        description: "Strategic content creation that attracts and converts.",
-        features: ["Content strategy", "Blog management", "Thought leadership", "Content distribution"],
-      },
-    ],
-  },
-  {
-    title: "Brand & Creative",
-    description: "Build memorable brands that resonate",
-    icon: Palette,
-    services: [
-      {
-        icon: Users,
-        name: "Social Media Management",
-        description: "Community building and engagement across platforms.",
-        features: ["Content calendar", "Community management", "Influencer outreach", "Social listening"],
-      },
-      {
-        icon: Palette,
-        name: "Branding Strategy",
-        description: "Brand identity and positioning that differentiates.",
-        features: ["Brand audit", "Visual identity", "Messaging framework", "Brand guidelines"],
-      },
-      {
-        icon: Video,
-        name: "Video Marketing",
-        description: "Compelling video content that drives engagement.",
-        features: ["Video strategy", "Production", "YouTube optimization", "Video ads"],
-      },
-      {
-        icon: Sparkles,
-        name: "Creative Campaigns",
-        description: "Innovative campaigns that capture attention and convert.",
-        features: ["Campaign ideation", "Creative direction", "Multi-channel execution", "Performance tracking"],
-      },
-    ],
-  },
-  {
-    title: "Web & Automation",
-    description: "Technology-driven marketing solutions",
-    icon: Globe,
-    services: [
       {
         icon: Globe,
-        name: "Web Design",
-        description: "High-converting websites built for performance.",
-        features: ["UX design", "Responsive development", "Speed optimization", "Conversion focus"],
+        name: "Landing Page Systems",
+        description: "Improves conversion rate and page speed. Solves low-converting traffic. Results in 4-8 weeks.",
+        features: ["Conversion-focused UX", "Responsive development", "Core Web Vitals", "Template systems"],
       },
       {
         icon: GitBranch,
         name: "Funnel Development",
-        description: "Sales and marketing funnels that drive revenue.",
-        features: ["Funnel strategy", "Landing pages", "Lead magnets", "Upsell sequences"],
+        description: "Improves lead-to-customer conversion. Solves leaky funnels. Results in 3-6 weeks.",
+        features: ["Funnel architecture", "Landing page optimization", "Lead magnets", "Upsell sequences"],
       },
+      {
+        icon: FileText,
+        name: "Content Marketing",
+        description: "Drives organic traffic and positions your brand for target keywords. Solves low authority. Results in 3-6 months.",
+        features: ["Topic cluster strategy", "SEO blog management", "Lead magnet creation", "Content distribution"],
+      },
+    ],
+  },
+  {
+    title: "Retain Customers",
+    description: "Increase lifetime value, repeat purchases, and customer engagement",
+    icon: Mail,
+    services: [
       {
         icon: Mail,
         name: "Email Marketing",
-        description: "Automated email sequences that nurture and convert.",
-        features: ["Email strategy", "Automation flows", "Segmentation", "A/B testing"],
+        description: "Improves lead nurturing and repeat purchase rate. Solves low email ROI. Results in 3-4 weeks.",
+        features: ["Drip sequence design", "Automation flows", "Behavioral segmentation", "Subject line A/B testing"],
       },
       {
         icon: Zap,
         name: "Marketing Automation",
-        description: "Streamlined workflows that scale your marketing.",
-        features: ["CRM integration", "Lead scoring", "Workflow automation", "Analytics"],
+        description: "Improves lead velocity and marketing efficiency. Solves manual processes slowing growth. Results in 4-6 weeks.",
+        features: ["CRM integration", "Lead scoring models", "Workflow automation", "Attribution analytics"],
+      },
+      {
+        icon: Users,
+        name: "Social & Community",
+        description: "Improves engagement rate and brand demand. Solves low social ROI. Results in 4-8 weeks.",
+        features: ["Content calendar", "Community management", "Influencer partnerships", "Social listening"],
+      },
+      {
+        icon: MapPin,
+        name: "Local SEO & Reviews",
+        description: "Improves local pack rankings and appointment volume. Solves low local visibility. Results in 2-4 months.",
+        features: ["Google Business Profile", "Local citations", "Review generation", "Local keyword targeting"],
+      },
+    ],
+  },
+  {
+    title: "Scale Revenue",
+    description: "Expand into new channels, markets, and campaign types profitably",
+    icon: Sparkles,
+    services: [
+      {
+        icon: Video,
+        name: "Video & Creative",
+        description: "Improves ad performance and engagement rate. Solves creative fatigue. Results in 3-5 weeks.",
+        features: ["Video ad strategy", "Production", "YouTube SEO", "Video retargeting"],
+      },
+      {
+        icon: Sparkles,
+        name: "Multi-Channel Campaigns",
+        description: "Coordinated campaigns across all channels to maximize total revenue. Solves siloed marketing. Results in 4-8 weeks.",
+        features: ["Campaign ideation", "Creative A/B testing", "Multi-channel execution", "Attribution tracking"],
+      },
+      {
+        icon: Palette,
+        name: "Brand & Positioning",
+        description: "Improves brand recall and market positioning. Solves weak differentiation. Results in 6-8 weeks.",
+        features: ["Brand audit", "Positioning strategy", "Messaging framework", "Brand guidelines"],
+      },
+      {
+        icon: Settings,
+        name: "Analytics & Attribution",
+        description: "Multi-touch attribution and real-time dashboards. Solves unclear marketing ROI. Results in 2-4 weeks.",
+        features: ["GA4 setup", "Multi-touch attribution", "Custom dashboards", "Revenue tracking"],
       },
     ],
   },
@@ -168,13 +168,13 @@ const Services = () => {
               Our Services
             </span>
             <h1 className="text-display-lg md:text-display-xl text-foreground mb-6">
-              Full-spectrum digital
+              Acquire. Convert.
               <br />
-              <span className="text-muted-foreground">marketing expertise</span>
+              <span className="text-muted-foreground">Retain. Scale.</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              From strategy to execution, we provide comprehensive digital marketing
-              services that drive measurable results and sustainable growth.
+              Every service maps to a stage of your growth. We don't sell channels —
+              we solve business problems with the right marketing mix for each stage.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="cta" size="lg" asChild>
@@ -271,12 +271,12 @@ const Services = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-display-sm md:text-display-md text-background mb-6">
-              Ready to accelerate
+              Ready to improve your
               <br />
-              your growth?
+              marketing performance?
             </h2>
             <p className="text-background/70 text-lg mb-8">
-              Let's discuss how our services can help you achieve your business goals.
+              Book a free audit. We'll identify which channels to prioritize and what KPIs to target first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

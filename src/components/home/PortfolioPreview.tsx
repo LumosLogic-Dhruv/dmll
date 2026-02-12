@@ -7,26 +7,26 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "E-Commerce Growth Strategy",
-    category: "SEO & PPC",
+    title: "E-Commerce ROAS Scaling",
+    category: "Google Ads & Meta Ads",
     result: "+340% Revenue",
-    description: "Complete digital transformation for a leading e-commerce brand",
+    description: "Campaign restructuring + shopping feed optimization for a DTC brand",
     color: "from-electric to-electric-light",
     metrics: { before: "50K", after: "220K", label: "Monthly Revenue" },
   },
   {
-    title: "Brand Awareness Campaign",
-    category: "Social Media",
+    title: "Paid Social Pipeline Generation",
+    category: "Meta Ads & LinkedIn",
     result: "2M+ Impressions",
-    description: "Viral campaign that reached millions across platforms",
+    description: "Retargeting layers + lookalike audiences to generate qualified pipeline",
     color: "from-orange to-orange-light",
     metrics: { before: "10K", after: "2M", label: "Monthly Reach" },
   },
   {
-    title: "Lead Generation System",
-    category: "Content Marketing",
+    title: "SEO Lead Generation Engine",
+    category: "SEO & Content",
     result: "500+ Qualified Leads",
-    description: "Automated funnel that delivers consistent high-quality leads",
+    description: "Keyword clustering + funnel optimization driving inbound leads monthly",
     color: "from-navy to-navy-light",
     metrics: { before: "20", after: "500+", label: "Monthly Leads" },
   },
@@ -49,7 +49,7 @@ const PortfolioPreview = () => {
             Featured <span className="text-gradient-blue">Case Studies</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real results for real businesses. Explore how we've helped our clients achieve their goals.
+            Before and after campaign metrics. See the performance improvements we delivered.
           </p>
         </ScrollReveal>
 

@@ -4,39 +4,39 @@ import { Check, Shield, Zap, LineChart, Users, Clock } from "lucide-react";
 const differentiators = [
   {
     icon: LineChart,
-    title: "Data-Driven Decisions",
+    title: "Campaign Analytics",
     description:
-      "Every strategy is backed by comprehensive analytics and real-time performance data.",
+      "Real-time dashboards tracking CTR, CPA, ROAS, and conversion rate across every active campaign.",
   },
   {
     icon: Users,
-    title: "Dedicated Team",
+    title: "Dedicated Media Buyers",
     description:
-      "A focused team of specialists working exclusively on your brand's success.",
+      "Certified specialists in Google Ads, Meta, and LinkedIn managing your campaigns daily.",
   },
   {
     icon: Zap,
-    title: "Rapid Execution",
+    title: "Weekly Optimization Cycles",
     description:
-      "Swift implementation and iteration cycles that keep you ahead of the competition.",
+      "Bid adjustments, audience refinements, and creative testing every week to improve performance.",
   },
   {
     icon: Shield,
-    title: "Transparent Reporting",
+    title: "Full Attribution Reporting",
     description:
-      "Clear, honest communication with real-time dashboards and weekly strategic calls.",
+      "Multi-touch attribution and revenue tracking so you see exactly which channels drive ROI.",
   },
   {
     icon: Clock,
-    title: "Long-term Partnership",
+    title: "Results in 30 Days",
     description:
-      "We're invested in your sustained growth, not just quick wins.",
+      "Paid campaigns launch within 7 days. SEO improvements visible within the first quarter.",
   },
   {
     icon: Check,
-    title: "Proven Results",
+    title: "Proven Marketing ROI",
     description:
-      "Track record of delivering measurable ROI across diverse industries.",
+      "312% average ROAS and 41% CPA reduction across 500+ campaigns managed.",
   },
 ];
 
@@ -59,22 +59,22 @@ const WhyChooseUs = () => {
               Why Choose Us
             </span>
             <h2 className="text-display-sm md:text-display-md text-foreground mb-6">
-              Built different.
+              Growth operators.
               <br />
-              <span className="text-muted-foreground">Built for results.</span>
+              <span className="text-muted-foreground">Not a creative agency.</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're not another generic agency. We're growth engineers who combine
-              strategic thinking with flawless execution to deliver outcomes that
-              matter.
+              We don't pitch mood boards. We manage campaigns, analyze data,
+              run optimization cycles, and report on the metrics that drive
+              your revenue.
             </p>
 
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-6">
               {[
-                { value: "8+", label: "Years Experience" },
-                { value: "150+", label: "Team Members" },
-                { value: "25+", label: "Industries" },
+                { value: "$50M+", label: "Ad Spend Managed" },
+                { value: "312%", label: "Avg. ROAS" },
+                { value: "-41%", label: "Avg. CPA Reduction" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl font-bold text-foreground mb-1">

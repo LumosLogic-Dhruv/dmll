@@ -10,10 +10,10 @@ import {
 } from "@/components/animations";
 
 const stats = [
-  { icon: TrendingUp, value: 150, suffix: "%", label: "Average ROI Increase", color: "stroke-electric" },
-  { icon: Users, value: 500, suffix: "+", label: "Happy Clients", color: "stroke-orange" },
-  { icon: Award, value: 50, suffix: "+", label: "Industry Awards", color: "stroke-electric" },
-  { icon: Globe, value: 30, suffix: "+", label: "Countries Served", color: "stroke-orange" },
+  { icon: TrendingUp, value: 312, suffix: "%", label: "Avg. ROAS Delivered", color: "stroke-electric" },
+  { icon: Users, value: 500, suffix: "+", label: "Campaigns Optimized", color: "stroke-orange" },
+  { icon: Award, value: 41, suffix: "%", label: "Avg. CPA Reduction", color: "stroke-electric" },
+  { icon: Globe, value: 50, suffix: "M+", label: "Ad Spend Managed ($)", color: "stroke-orange" },
 ];
 
 const StatsCounter = () => {
@@ -25,10 +25,10 @@ const StatsCounter = () => {
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal animation="fadeUp" className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-            Numbers That <span className="text-gradient-orange">Speak</span>
+            Campaign Performance <span className="text-gradient-orange">Metrics</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-            Our track record of success drives everything we do
+            Aggregate results across all client campaigns we manage and optimize
           </p>
         </ScrollReveal>
 

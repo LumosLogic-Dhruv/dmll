@@ -6,16 +6,16 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const testimonials = [
   {
     quote:
-      "LumosLogic transformed our digital strategy completely. Within 6 months, our organic traffic increased by 340% and qualified leads tripled. Their data-driven approach is unmatched.",
+      "Orvix restructured our entire SEO strategy with keyword clustering and technical fixes. Within 6 months, organic traffic grew 340% and qualified leads tripled. Every move was data-backed.",
     author: "Sarah Mitchell",
     role: "CEO",
     company: "TechFlow Solutions",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-    metric: { value: "+340%", label: "Traffic Growth" },
+    metric: { value: "+340%", label: "Organic Traffic" },
   },
   {
     quote:
-      "The team's expertise in paid acquisition saved us $50K in ad spend while dramatically improving our ROAS. They don't just run campaigns—they optimize for real business outcomes.",
+      "Their paid media team rebuilt our Google Ads account structure and cut $50K in wasted spend while improving ROAS from 1.8X to 4.2X. They optimize for revenue, not vanity metrics.",
     author: "Michael Chen",
     role: "VP Marketing",
     company: "Innovate Corp",
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with LumosLogic has been transformative for our e-commerce business. Their comprehensive approach helped us achieve $2M in additional revenue within our first year.",
+      "Orvix manages our Meta Ads, Google Shopping, and retargeting. Their funnel optimization and campaign restructuring added $2M in revenue within year one. Real operators.",
     author: "Emily Rodriguez",
     role: "Founder",
     company: "StyleHouse",
@@ -33,24 +33,13 @@ const testimonials = [
   },
   {
     quote:
-      "Finally, an agency that delivers on their promises. LumosLogic's systematic approach to SEO put us on page one for our top 20 keywords in just 4 months.",
+      "Orvix's SEO team built a keyword strategy, fixed our site architecture, and executed a link building plan. Page one rankings for 20+ target keywords in 4 months. Measurable results only.",
     author: "David Park",
     role: "CMO",
     company: "GrowthLabs",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     metric: { value: "Page 1", label: "20+ Keywords" },
   },
-];
-
-const clientLogos = [
-  "TechFlow",
-  "Innovate Corp",
-  "StyleHouse",
-  "GrowthLabs",
-  "DataPrime",
-  "CloudSync",
-  "BrandForge",
-  "ScaleUp",
 ];
 
 const Testimonials = () => {
@@ -83,7 +72,7 @@ const Testimonials = () => {
             Client Success
           </span>
           <h2 className="text-display-sm md:text-display-md text-foreground">
-            Trusted by industry leaders
+            Marketing results our clients measured
           </h2>
         </motion.div>
 
@@ -181,28 +170,6 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Client Logos */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-20"
-        >
-          <p className="text-center text-sm text-muted-foreground mb-8">
-            Trusted by innovative brands worldwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {clientLogos.map((logo) => (
-              <div
-                key={logo}
-                className="text-lg font-semibold text-muted-foreground/50 hover:text-foreground transition-colors"
-              >
-                {logo}
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -52,14 +52,14 @@ const Footer = () => {
               />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
-              Engineering growth for ambitious brands. Data-driven digital
-              marketing that delivers measurable results.
+              We manage paid campaigns, SEO, and conversion optimization
+              to increase leads, lower CPA, and scale revenue.
             </p>
 
             {/* Newsletter */}
             <div className="mb-6">
               <p className="text-sm font-medium text-foreground mb-3">
-                Get weekly growth insights
+                Weekly campaign optimization tips
               </p>
               <div className="flex gap-2">
                 <Input

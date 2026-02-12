@@ -1,25 +1,29 @@
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
-import ServicesPreview from "@/components/home/ServicesPreview";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
+import SocialProofStrip from "@/components/home/SocialProofStrip";
 import CaseStudies from "@/components/home/CaseStudies";
+import ProblemsWeSolve from "@/components/home/ProblemsWeSolve";
+import ServicesPreview from "@/components/home/ServicesPreview";
+import FeaturedCaseStudy from "@/components/home/FeaturedCaseStudy";
 import Process from "@/components/home/Process";
+import Industries from "@/components/home/Industries";
 import Testimonials from "@/components/home/Testimonials";
-import PricingPreview from "@/components/home/PricingPreview";
-import InsightsPreview from "@/components/home/InsightsPreview";
+import EngagementModel from "@/components/home/EngagementModel";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
     <Layout>
       <Hero />
-      <ServicesPreview />
-      <WhyChooseUs />
+      <SocialProofStrip />
       <CaseStudies />
+      <ProblemsWeSolve />
+      <ServicesPreview />
+      <FeaturedCaseStudy />
       <Process />
+      <Industries />
       <Testimonials />
-      <PricingPreview />
-      <InsightsPreview />
+      <EngagementModel />
       <CTASection />
     </Layout>
   );

@@ -67,87 +67,104 @@ const Hero = () => {
         <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
       </div>
 
-      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-5xl mx-auto text-center"
-        >
-          {/* Status Badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border border-border rounded text-sm">
-              <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
-              <span className="text-muted-foreground font-medium">
-                Now accepting Q1 2026 clients
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-display-lg md:text-display-xl lg:text-display-2xl font-bold text-foreground mb-6 leading-none"
-          >
-            Engineering Growth
-            <br />
-            <span className="text-muted-foreground">for the Digital Age.</span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            We blend performance marketing, data intelligence, and creative strategy
-            to build brands that dominate markets.
-          </motion.p>
-
-          {/* CTA Buttons */}
+      <div className="container mx-auto px-4 lg:px-8 pt-32 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+          {/* LEFT: Content */}
           <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="order-2 lg:order-1"
           >
-            <Button variant="cta" size="xl" asChild>
-              <Link to="/contact">
-                Start Your Growth Journey
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild>
-              <Link to="/portfolio">
-                <Play className="w-5 h-5 mr-2" />
-                View Case Studies
-              </Link>
-            </Button>
+            {/* Status Badge */}
+            <motion.div variants={itemVariants} className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border border-border rounded text-sm">
+                <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
+                <span className="text-muted-foreground font-medium">
+                  Google Ads | Meta Ads | LinkedIn | SEO | CRO
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-none"
+            >
+              We Turn Ad Spend
+              <br />
+              <span className="text-muted-foreground">Into Measurable Revenue.</span>
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+            >
+              We manage paid campaigns, SEO, and conversion optimization
+              to increase your leads, lower acquisition costs, and scale revenue.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 mb-16"
+            >
+              <Button variant="cta" size="xl" asChild>
+                <Link to="/contact">
+                  Get a Free Growth Audit
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="xl" asChild>
+                <Link to="/portfolio">
+                  <Play className="w-5 h-5 mr-2" />
+                  View Case Studies
+                </Link>
+              </Button>
+            </motion.div>
+
+            {/* Stats Row */}
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            >
+              {[
+                { value: "$50M+", label: "Ad Spend Managed" },
+                { value: "312%", label: "Avg. ROAS Delivered" },
+                { value: "-41%", label: "Avg. CPA Reduction" },
+                { value: "500+", label: "Campaigns Optimized" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Stats Row */}
+          {/* RIGHT: Digital Marketing Image */}
           <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="order-1 lg:order-2 h-[400px] md:h-[500px] relative flex items-center justify-center"
           >
-            {[
-              { value: "500+", label: "Clients Served" },
-              { value: "$50M+", label: "Revenue Generated" },
-              { value: "312%", label: "Avg. ROAS" },
-              { value: "98%", label: "Client Retention" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
+            <img 
+              src="/hero.webp"
+              alt="Digital Marketing Analytics Dashboard"
+              className="w-full h-full object-contain drop-shadow-2xl scale-110"
+            />
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
