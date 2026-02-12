@@ -1,32 +1,84 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Linkedin, Twitter, Instagram, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+const footerLinks = {
+  services: [
+    { name: "Performance Marketing", path: "/services/performance" },
+    { name: "SEO & Content", path: "/services/seo" },
+    { name: "Brand Strategy", path: "/services/branding" },
+    { name: "Web Development", path: "/services/web" },
+    { name: "Marketing Automation", path: "/services/automation" },
+  ],
+  company: [
+    { name: "About Us", path: "/about" },
+    { name: "Case Studies", path: "/portfolio" },
+    { name: "Insights", path: "/insights" },
+    { name: "Careers", path: "/careers" },
+    { name: "Contact", path: "/contact" },
+  ],
+  resources: [
+    { name: "Blog", path: "/insights" },
+    { name: "Guides & Ebooks", path: "/resources" },
+    { name: "ROI Calculator", path: "/calculator" },
+    { name: "Free Consultation", path: "/contact" },
+  ],
+};
+
+const socialLinks = [
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+];
+
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-secondary border-t border-border">
+      <div className="container mx-auto px-4">
+        {/* Main Footer */}
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Brand Column */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 gradient-blue rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">D</span>
+          <div className="lg:col-span-4">
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 bg-foreground flex items-center justify-center rounded">
+                <span className="text-background font-bold text-lg">L</span>
               </div>
-              <span className="font-heading font-bold text-xl text-secondary-foreground">
-                DigitalEdge
+              <span className="font-bold text-lg tracking-tight text-foreground">
+                LumosLogic
               </span>
             </Link>
-            <p className="text-secondary-foreground/70 text-sm leading-relaxed">
-              Empowering businesses with cutting-edge digital marketing strategies that drive real results and sustainable growth.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
+              Engineering growth for ambitious brands. Data-driven digital
+              marketing that delivers measurable results.
             </p>
+
+            {/* Newsletter */}
+            <div className="mb-6">
+              <p className="text-sm font-medium text-foreground mb-3">
+                Get weekly growth insights
+              </p>
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-background border-border rounded"
+                />
+                <Button variant="default" size="icon" className="shrink-0 rounded">
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Social Links */}
             <div className="flex gap-3">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-10 h-10 flex items-center justify-center border border-border rounded hover:bg-foreground hover:text-background hover:border-foreground transition-all duration-300"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -34,87 +86,111 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Quick Links</h4>
+          {/* Services Links */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-4">Services</h4>
             <ul className="space-y-3">
-              {["Services", "Pricing", "Portfolio", "About Us", "Contact"].map((link) => (
-                <li key={link}>
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
                   <Link
-                    to={`/${link.toLowerCase().replace(" ", "-")}`}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-200"
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    {link}
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Services</h4>
+          {/* Company Links */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-3">
-              {["SEO Optimization", "Social Media", "Content Marketing", "PPC Advertising", "Web Development"].map((service) => (
-                <li key={service}>
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
                   <Link
-                    to="/services"
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-200"
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    {service}
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact & Newsletter */}
-          <div className="space-y-6">
-            <h4 className="font-heading font-semibold text-lg">Get In Touch</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-secondary-foreground/70 text-sm">
-                  123 Digital Avenue, Tech City, TC 10001
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-secondary-foreground/70 text-sm">(555) 123-4567</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-secondary-foreground/70 text-sm">hello@digitaledge.com</span>
-              </li>
+          {/* Resources Links */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-4">Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-            
-            <div className="pt-4">
-              <h5 className="font-medium mb-3 text-sm">Subscribe to Newsletter</h5>
-              <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="Your email"
-                  className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                />
-                <Button variant="default" size="icon">
-                  <Mail className="w-4 h-4" />
-                </Button>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-muted-foreground">Email</p>
+                <a
+                  href="mailto:hello@lumoslogic.com"
+                  className="text-foreground hover:underline"
+                >
+                  hello@lumoslogic.com
+                </a>
+              </div>
+              <div>
+                <p className="text-muted-foreground">Phone</p>
+                <a
+                  href="tel:+15551234567"
+                  className="text-foreground hover:underline"
+                >
+                  (555) 123-4567
+                </a>
+              </div>
+              <div>
+                <p className="text-muted-foreground">Location</p>
+                <p className="text-foreground">San Francisco, CA</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-secondary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary-foreground/60 text-sm">
-            © 2024 DigitalEdge Marketing. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="py-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © 2026 LumosLogic. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-secondary-foreground/60 text-sm hover:text-primary transition-colors">
+            <Link
+              to="/privacy"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="text-secondary-foreground/60 text-sm hover:text-primary transition-colors">
+            </Link>
+            <Link
+              to="/terms"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Terms of Service
-            </a>
+            </Link>
+            <Link
+              to="/cookies"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>

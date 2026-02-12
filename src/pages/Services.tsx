@@ -1,103 +1,151 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
-import { 
-  Search, 
-  Share2, 
-  FileText, 
-  Target, 
-  Globe, 
-  Mail, 
-  BarChart3,
+import {
+  Target,
+  Search,
+  Megaphone,
+  Linkedin,
+  TrendingUp,
+  Settings,
+  MapPin,
+  FileText,
+  Users,
+  Palette,
+  Video,
+  Sparkles,
+  Globe,
+  GitBranch,
+  Mail,
+  Zap,
   ArrowRight,
-  CheckCircle
+  Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { AnalyticsCube } from "@/components/3d";
 
-const services = [
+const serviceCategories = [
   {
-    icon: Search,
-    title: "Search Engine Optimization (SEO)",
-    description: "Dominate search results and drive organic traffic with our comprehensive SEO strategies.",
-    features: [
-      "Keyword research & strategy",
-      "On-page & technical SEO",
-      "Link building & outreach",
-      "Local SEO optimization",
-      "SEO audits & reporting",
-    ],
-  },
-  {
-    icon: Share2,
-    title: "Social Media Marketing",
-    description: "Build a powerful social presence that engages your audience and amplifies your brand.",
-    features: [
-      "Platform strategy & management",
-      "Content creation & curation",
-      "Community management",
-      "Paid social advertising",
-      "Influencer partnerships",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "Content Marketing",
-    description: "Create compelling content that tells your story and drives meaningful engagement.",
-    features: [
-      "Content strategy development",
-      "Blog & article writing",
-      "Video production",
-      "Infographic design",
-      "Content distribution",
-    ],
-  },
-  {
+    title: "Performance Marketing",
+    description: "Data-driven campaigns that maximize ROI",
     icon: Target,
-    title: "Pay-Per-Click (PPC) Advertising",
-    description: "Maximize ROI with precisely targeted paid campaigns across all major platforms.",
-    features: [
-      "Google Ads management",
-      "Facebook & Instagram ads",
-      "LinkedIn advertising",
-      "Retargeting campaigns",
-      "A/B testing & optimization",
+    services: [
+      {
+        icon: Target,
+        name: "Google Ads",
+        description: "Search, Display, Shopping, and YouTube campaigns optimized for conversions.",
+        features: ["Keyword research", "Ad copy optimization", "Bid management", "Landing page optimization"],
+      },
+      {
+        icon: Megaphone,
+        name: "Meta Ads",
+        description: "Facebook and Instagram advertising with advanced audience targeting.",
+        features: ["Audience building", "Creative testing", "Retargeting", "Catalog sales"],
+      },
+      {
+        icon: Linkedin,
+        name: "LinkedIn Ads",
+        description: "B2B lead generation through professional network advertising.",
+        features: ["Account targeting", "Lead gen forms", "Sponsored content", "InMail campaigns"],
+      },
+      {
+        icon: TrendingUp,
+        name: "Conversion Optimization",
+        description: "A/B testing and CRO to maximize conversion rates.",
+        features: ["Heatmap analysis", "User testing", "Funnel optimization", "Multivariate testing"],
+      },
     ],
   },
   {
+    title: "Organic Growth",
+    description: "Sustainable traffic and authority building",
+    icon: Search,
+    services: [
+      {
+        icon: Search,
+        name: "SEO Strategy",
+        description: "Comprehensive search optimization for long-term organic growth.",
+        features: ["Keyword strategy", "Content optimization", "Link building", "Technical audits"],
+      },
+      {
+        icon: Settings,
+        name: "Technical SEO",
+        description: "Site structure, speed, and crawlability optimization.",
+        features: ["Core Web Vitals", "Schema markup", "Site architecture", "Mobile optimization"],
+      },
+      {
+        icon: MapPin,
+        name: "Local SEO",
+        description: "Dominate local search results and drive foot traffic.",
+        features: ["Google Business Profile", "Local citations", "Review management", "Local content"],
+      },
+      {
+        icon: FileText,
+        name: "Content Marketing",
+        description: "Strategic content creation that attracts and converts.",
+        features: ["Content strategy", "Blog management", "Thought leadership", "Content distribution"],
+      },
+    ],
+  },
+  {
+    title: "Brand & Creative",
+    description: "Build memorable brands that resonate",
+    icon: Palette,
+    services: [
+      {
+        icon: Users,
+        name: "Social Media Management",
+        description: "Community building and engagement across platforms.",
+        features: ["Content calendar", "Community management", "Influencer outreach", "Social listening"],
+      },
+      {
+        icon: Palette,
+        name: "Branding Strategy",
+        description: "Brand identity and positioning that differentiates.",
+        features: ["Brand audit", "Visual identity", "Messaging framework", "Brand guidelines"],
+      },
+      {
+        icon: Video,
+        name: "Video Marketing",
+        description: "Compelling video content that drives engagement.",
+        features: ["Video strategy", "Production", "YouTube optimization", "Video ads"],
+      },
+      {
+        icon: Sparkles,
+        name: "Creative Campaigns",
+        description: "Innovative campaigns that capture attention and convert.",
+        features: ["Campaign ideation", "Creative direction", "Multi-channel execution", "Performance tracking"],
+      },
+    ],
+  },
+  {
+    title: "Web & Automation",
+    description: "Technology-driven marketing solutions",
     icon: Globe,
-    title: "Web Design & Development",
-    description: "Create stunning, conversion-optimized websites that elevate your digital presence.",
-    features: [
-      "Custom website design",
-      "Responsive development",
-      "E-commerce solutions",
-      "Landing page creation",
-      "Website maintenance",
-    ],
-  },
-  {
-    icon: Mail,
-    title: "Email Marketing",
-    description: "Nurture leads and drive conversions with personalized email campaigns.",
-    features: [
-      "Email strategy & automation",
-      "Template design",
-      "List segmentation",
-      "A/B testing",
-      "Performance analytics",
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Make data-driven decisions with comprehensive analytics and actionable insights.",
-    features: [
-      "Google Analytics setup",
-      "Custom dashboards",
-      "Conversion tracking",
-      "ROI analysis",
-      "Monthly reporting",
+    services: [
+      {
+        icon: Globe,
+        name: "Web Design",
+        description: "High-converting websites built for performance.",
+        features: ["UX design", "Responsive development", "Speed optimization", "Conversion focus"],
+      },
+      {
+        icon: GitBranch,
+        name: "Funnel Development",
+        description: "Sales and marketing funnels that drive revenue.",
+        features: ["Funnel strategy", "Landing pages", "Lead magnets", "Upsell sequences"],
+      },
+      {
+        icon: Mail,
+        name: "Email Marketing",
+        description: "Automated email sequences that nurture and convert.",
+        features: ["Email strategy", "Automation flows", "Segmentation", "A/B testing"],
+      },
+      {
+        icon: Zap,
+        name: "Marketing Automation",
+        description: "Streamlined workflows that scale your marketing.",
+        features: ["CRM integration", "Lead scoring", "Workflow automation", "Analytics"],
+      },
     ],
   },
 ];
@@ -106,102 +154,114 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-electric/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-orange/10 rounded-full blur-3xl" />
-        </div>
+      <section className="pt-32 pb-20 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-40" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            className="max-w-3xl"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/90 text-sm font-medium mb-6">
+            <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
               Our Services
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Full-Service Digital
+            <h1 className="text-display-lg md:text-display-xl text-foreground mb-6">
+              Full-spectrum digital
               <br />
-              <span className="text-gradient-orange">Marketing Solutions</span>
+              <span className="text-muted-foreground">marketing expertise</span>
             </h1>
-            <p className="text-primary-foreground/70 text-lg mb-8">
-              From strategy to execution, we provide comprehensive digital marketing services 
-              that drive real results and sustainable growth for your business.
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+              From strategy to execution, we provide comprehensive digital marketing
+              services that drive measurable results and sustainable growth.
             </p>
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/pricing">
-                View Pricing Plans
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="cta" size="lg" asChild>
+                <Link to="/contact">
+                  Get Started
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/pricing">View Pricing</Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className={`flex flex-col lg:flex-row gap-12 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="flex-1">
-                  <div className="w-16 h-16 rounded-2xl gradient-blue flex items-center justify-center mb-6 shadow-glow-blue">
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
+      {/* Service Categories */}
+      {serviceCategories.map((category, categoryIndex) => (
+        <section
+          key={category.title}
+          className={`section-padding ${categoryIndex % 2 === 0 ? "bg-background" : "bg-secondary/30"}`}
+        >
+          <div className="container mx-auto px-4">
+            {/* Category Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+              className="flex items-start gap-6 mb-12"
+            >
+              <div className="w-14 h-14 flex items-center justify-center border border-border rounded shrink-0">
+                <category.icon className="w-6 h-6 text-foreground" />
+              </div>
+              <div>
+                <h2 className="text-display-xs md:text-display-sm text-foreground mb-2">
+                  {category.title}
+                </h2>
+                <p className="text-muted-foreground">{category.description}</p>
+              </div>
+            </motion.div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {category.services.map((service, serviceIndex) => (
+                <motion.div
+                  key={service.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: serviceIndex * 0.1, duration: 0.5 }}
+                  className="group p-8 bg-card border border-border rounded hover:border-foreground/20 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-10 h-10 flex items-center justify-center border border-border rounded group-hover:border-foreground/30 group-hover:bg-secondary transition-all">
+                      <service.icon className="w-5 h-5 text-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground mb-1">
+                        {service.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-muted-foreground text-lg mb-6">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
+
+                  <ul className="grid grid-cols-2 gap-2">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                      >
+                        <Check className="w-4 h-4 text-foreground shrink-0" />
+                        {feature}
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="flex-1">
-                  <div className={`aspect-square max-w-md mx-auto rounded-3xl ${
-                    index % 3 === 0 
-                      ? "gradient-blue" 
-                      : index % 3 === 1 
-                        ? "gradient-orange" 
-                        : "gradient-hero"
-                  } opacity-90 flex items-center justify-center relative overflow-hidden`}>
-                    {/* Show 3D model for Analytics service */}
-                    {service.title.includes("Analytics") ? (
-                      <div className="absolute inset-0">
-                        <AnalyticsCube />
-                      </div>
-                    ) : (
-                      <service.icon className="w-32 h-32 text-primary-foreground/30" />
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* CTA */}
-      <section className="py-24 gradient-hero">
+      <section className="section-padding bg-foreground">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,20 +270,32 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-              Ready to Transform Your Digital Presence?
+            <h2 className="text-display-sm md:text-display-md text-background mb-6">
+              Ready to accelerate
+              <br />
+              your growth?
             </h2>
-            <p className="text-primary-foreground/70 text-lg mb-8">
+            <p className="text-background/70 text-lg mb-8">
               Let's discuss how our services can help you achieve your business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" asChild>
+              <Button
+                variant="secondary"
+                size="xl"
+                className="bg-background text-foreground hover:bg-background/90"
+                asChild
+              >
                 <Link to="/contact">
-                  Get Free Consultation
-                  <ArrowRight className="w-4 h-4" />
+                  Book a Strategy Call
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button variant="heroOutline" size="lg" asChild>
+              <Button
+                variant="outline"
+                size="xl"
+                className="border-background/30 text-background hover:bg-background/10"
+                asChild
+              >
                 <Link to="/pricing">View Pricing</Link>
               </Button>
             </div>
