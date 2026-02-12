@@ -67,8 +67,8 @@ const Hero = () => {
         <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
           {/* LEFT: Content */}
           <motion.div
             variants={containerVariants}
