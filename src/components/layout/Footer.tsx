@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useTheme } from "next-themes";
 
 const footerLinks = {
   services: [
@@ -34,6 +35,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { theme } = useTheme();
+  
   return (
     <footer className="bg-secondary border-t border-border">
       <div className="container mx-auto px-4">
@@ -42,12 +45,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 bg-foreground flex items-center justify-center rounded">
-                <span className="text-background font-bold text-lg">L</span>
-              </div>
-              <span className="font-bold text-lg tracking-tight text-foreground">
-                LumosLogic
-              </span>
+              <img 
+                src={theme === "dark" ? "/orvixwhitebg.png" : "/orvixblackbg.png"}
+                alt="Orvix Logo"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
               Engineering growth for ambitious brands. Data-driven digital
@@ -144,10 +146,10 @@ const Footer = () => {
               <div>
                 <p className="text-muted-foreground">Email</p>
                 <a
-                  href="mailto:hello@lumoslogic.com"
+                  href="mailto:hello@orvix.com"
                   className="text-foreground hover:underline"
                 >
-                  hello@lumoslogic.com
+                  hello@orvix.com
                 </a>
               </div>
               <div>
@@ -170,7 +172,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 LumosLogic. All rights reserved.
+            © 2026 Orvix. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

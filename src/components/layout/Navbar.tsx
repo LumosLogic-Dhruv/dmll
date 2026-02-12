@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useTheme } from "next-themes";
 import {
   Target,
   Megaphone,
@@ -168,6 +169,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
+  const { theme } = useTheme();
   const location = useLocation();
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const servicesLinkRef = useRef<HTMLAnchorElement>(null);
@@ -225,12 +227,11 @@ const Navbar = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-foreground flex items-center justify-center rounded transition-transform group-hover:scale-105">
-              <span className="text-background font-bold text-lg">L</span>
-            </div>
-            <span className="font-bold text-lg tracking-tight text-foreground">
-              LumosLogic
-            </span>
+            <img 
+              src={theme === "dark" ? "/orvixwhitebg.png" : "/orvixblackbg.png"}
+              alt="Orvix Logo"
+              className="h-10 w-auto transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation - Center */}
