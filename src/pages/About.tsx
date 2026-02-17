@@ -6,39 +6,10 @@ import {
   Users,
   Shield,
   Award,
-  Linkedin,
-  Twitter,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const team = [
-  {
-    name: "Alexandra Chen",
-    role: "CEO & Founder",
-    bio: "15+ years in performance marketing. Former VP of Growth managing $20M+ annual ad budgets.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-  },
-  {
-    name: "Marcus Johnson",
-    role: "Head of Performance",
-    bio: "Google & Meta certified. Managed $100M+ in ad spend with consistent 300%+ ROAS.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-  },
-  {
-    name: "Sofia Rodriguez",
-    role: "Head of CRO & Analytics",
-    bio: "Conversion optimization specialist. Managed 200+ A/B tests with average 35% lift in conversion rate.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-  },
-  {
-    name: "David Kim",
-    role: "Head of SEO",
-    bio: "10+ years in search. Ranked 200+ websites page one through keyword clustering and technical SEO.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-  },
-];
 
 const values = [
   {
@@ -265,7 +236,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Life at Company - Culture Focus */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -276,57 +247,136 @@ const About = () => {
             className="text-center max-w-2xl mx-auto mb-16"
           >
             <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
-              Leadership
+              Life at Orvix
             </span>
             <h2 className="text-display-sm md:text-display-md text-foreground mb-4">
-              Meet the team
+              More than just campaigns
             </h2>
             <p className="text-muted-foreground">
-              Certified media buyers, SEO specialists, and CRO analysts
-              who manage campaigns daily.
+              We're a team of marketing operators who believe in data-driven decisions, 
+              continuous testing, and celebrating wins together.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, index) => (
+          {/* Culture Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: "Festival Celebrations",
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop",
+                description: "Team celebrations and cultural events"
+              },
+              {
+                title: "Team Activities",
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
+                description: "Collaborative workshops and team building"
+              },
+              {
+                title: "Office Moments",
+                image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop",
+                description: "Daily life at our workspace"
+              }
+            ].map((item, index) => (
               <motion.div
-                key={member.name}
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group text-center"
+                className="group relative aspect-[4/3] rounded-lg overflow-hidden"
               >
-                <div className="aspect-square mb-4 overflow-hidden rounded">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <h3 className="font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm font-medium text-muted-foreground mb-2">
-                  {member.role}
-                </p>
-                <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
-                <div className="flex justify-center gap-3">
-                  <a
-                    href="#"
-                    className="w-8 h-8 flex items-center justify-center border border-border rounded hover:bg-foreground hover:text-background hover:border-foreground transition-all"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 flex items-center justify-center border border-border rounded hover:bg-foreground hover:text-background hover:border-foreground transition-all"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </a>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-lg font-semibold text-background mb-1">{item.title}</h3>
+                  <p className="text-sm text-background/80">{item.description}</p>
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Masonry Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" },
+              { image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop", span: "col-span-1 row-span-2" },
+              { image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" },
+              { image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" },
+              { image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" },
+              { image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop", span: "col-span-1 row-span-2" },
+              { image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" },
+              { image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=300&fit=crop", span: "col-span-1 row-span-1" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
+                className={`${item.span} aspect-square overflow-hidden rounded-lg group cursor-pointer`}
+              >
+                <img
+                  src={item.image}
+                  alt={`Office moment ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Philosophy */}
+      <section className="section-padding-sm bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-display-sm md:text-display-md text-foreground mb-6">
+                How we think about marketing
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Test Everything",
+                  description: "Every campaign decision is backed by A/B tests. We don't guess—we measure, analyze, and optimize based on data."
+                },
+                {
+                  title: "KPI Accountability",
+                  description: "We're measured by results, not deliverables. Every engagement has clear targets: CPA, ROAS, traffic, or conversions."
+                },
+                {
+                  title: "Systematic Optimization",
+                  description: "Weekly optimization cycles across all campaigns. Bid adjustments, creative testing, audience refinement—it never stops."
+                },
+                {
+                  title: "Transparent Reporting",
+                  description: "Real-time dashboards and weekly reports. You see exactly where budget goes and what results it generates."
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-6 bg-background border border-border rounded-lg"
+                >
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

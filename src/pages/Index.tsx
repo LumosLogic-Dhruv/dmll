@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
+import VideoShowcase from "@/components/home/VideoShowcase";
 import SocialProofStrip from "@/components/home/SocialProofStrip";
 import CaseStudies from "@/components/home/CaseStudies";
 import ProblemsWeSolve from "@/components/home/ProblemsWeSolve";
@@ -15,6 +16,7 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
+      <VideoShowcase />
       <SocialProofStrip />
       <CaseStudies />
       <ProblemsWeSolve />

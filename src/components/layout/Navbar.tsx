@@ -28,8 +28,9 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services", hasMegaMenu: true },
   { name: "Case Studies", path: "/portfolio" },
+  { name: "Clients", path: "/clients" },
   { name: "About", path: "/about" },
-  { name: "Insights", path: "/insights" },
+  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -218,17 +219,19 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
           isScrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm py-3"
             : "bg-transparent py-5"
         }`}
+        style={{ zIndex: 50 }}
+        data-navbar="true"
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src={theme === "dark" ? "/orvixwhitebg.png" : "/orvixblackbg.png"}
+              src={theme === "dark" ? "/orvixwhitebg.png" : "/orvixbluebg.png"}
               alt="Orvix Logo"
               className="h-10 w-auto transition-transform group-hover:scale-105"
             />

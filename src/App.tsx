@@ -9,13 +9,17 @@ import MagnifierCursor from "@/components/MagnifierCursor";
 
 // Main Pages
 import Index from "./pages/Index";
-import Services from "./pages/Services";
+import ServicesNew from "./pages/ServicesNew";
 import Pricing from "./pages/Pricing";
-import Portfolio from "./pages/Portfolio";
+import PortfolioNew from "./pages/PortfolioNew";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
+import Clients from "./pages/Clients";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
+import SEOAudit from "./pages/SEOAudit";
 
 // Service Pages
 import PerformanceMarketing from "./pages/services/PerformanceMarketing";
@@ -45,11 +49,13 @@ const App = () => (
           <Routes>
             {/* Main Pages */}
             <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services" element={<ServicesNew />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio" element={<PortfolioNew />} />
+            <Route path="/clients" element={<Clients />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/seo-audit" element={<SEOAudit />} />
 
             {/* Service Detail Pages */}
             <Route path="/services/performance" element={<PerformanceMarketing />} />
@@ -87,6 +93,8 @@ const App = () => (
             {/* Insights/Blog routes */}
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/*" element={<Insights />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
 
             {/* Catch-all 404 */}
             <Route path="*" element={<NotFound />} />
