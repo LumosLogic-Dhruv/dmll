@@ -1,70 +1,145 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const clientLogos = [
-  "TechFlow",
-  "Innovate Corp",
-  "StyleHouse",
-  "GrowthLabs",
-  "DataPrime",
-  "CloudSync",
-  "BrandForge",
-  "ScaleUp",
+const clients = [
+  { name: "Google", logo: "https://cdn.worldvectorlogo.com/logos/google-2015.svg" },
+  { name: "Microsoft", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-5.svg" },
+  { name: "Amazon", logo: "https://cdn.worldvectorlogo.com/logos/amazon-1.svg" },
+  { name: "Meta", logo: "https://cdn.worldvectorlogo.com/logos/meta-1.svg" },
+  { name: "Apple", logo: "https://cdn.worldvectorlogo.com/logos/apple-11.svg" },
+  { name: "Netflix", logo: "https://cdn.worldvectorlogo.com/logos/netflix-3.svg" },
+  { name: "Tesla", logo: "https://cdn.worldvectorlogo.com/logos/tesla-9.svg" },
+  { name: "Spotify", logo: "https://cdn.worldvectorlogo.com/logos/spotify-2.svg" },
+  { name: "Adobe", logo: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+  { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+  { name: "IBM", logo: "https://cdn.worldvectorlogo.com/logos/ibm-2.svg" },
+  { name: "Oracle", logo: "https://cdn.worldvectorlogo.com/logos/oracle-6.svg" },
 ];
 
 const SocialProofStrip = () => {
+  const firstRow = clients.slice(0, 6);
+  const secondRow = clients.slice(6, 12);
+  const duplicatedFirstRow = [...firstRow, ...firstRow, ...firstRow];
+  const duplicatedSecondRow = [...secondRow, ...secondRow, ...secondRow];
+
   return (
-    <section className="py-12 bg-secondary/30 border-y border-border">
-      <div className="container mx-auto px-4">
-        {/* Rating + Logos */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Rating */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-4 shrink-0"
-          >
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-foreground text-foreground"
-                />
-              ))}
-            </div>
-            <div className="text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">4.9/5</span> from
-              200+ client reviews
-            </div>
-          </motion.div>
+    <section className="py-10 md:py-12 relative overflow-hidden" style={{ backgroundColor: '#141419' }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <span className="text-sm font-semibold uppercase tracking-wider mb-2 block" style={{ color: '#B5B5C3' }}>
+            Trusted by Industry Leaders
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 relative inline-block" style={{ color: '#FFFFFF' }}>
+            Clients We Stand For
+            
+          </h2>
+        </motion.div>
 
-          {/* Divider */}
-          <div className="hidden md:block w-px h-8 bg-border" />
-
-          {/* Client Logos */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap justify-center items-center gap-6 md:gap-8"
-          >
-            <span className="text-xs text-muted-foreground uppercase tracking-wider shrink-0">
-              Trusted by
-            </span>
-            {clientLogos.map((logo) => (
+        {/* Animated Logo Strips */}
+        <div className="space-y-4 mb-8">
+          {/* First Row - Left to Right */}
+          <div className="flex items-center gap-12 animate-scroll-ltr">
+            {duplicatedFirstRow.map((client, index) => (
               <div
-                key={logo}
-                className="text-sm font-semibold text-muted-foreground/40 hover:text-foreground transition-colors"
+                key={`ltr-${index}`}
+                className="flex items-center justify-center p-4 shrink-0"
+                style={{ width: '160px', height: '80px' }}
               >
-                {logo}
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="w-full h-full object-contain"
+                />
               </div>
             ))}
-          </motion.div>
+          </div>
+
+          {/* Second Row - Right to Left */}
+          <div className="flex items-center gap-12 animate-scroll-rtl">
+            {duplicatedSecondRow.map((client, index) => (
+              <div
+                key={`rtl-${index}`}
+                className="flex items-center justify-center p-4 shrink-0"
+                style={{ width: '160px', height: '80px' }}
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center"
+        >
+          <Link to="/clients">
+            <motion.button
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-base transition-all duration-400 relative overflow-hidden"
+              style={{
+                color: '#FFFFFF',
+                border: '1px solid #4F46E5',
+                backgroundColor: 'transparent',
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <motion.span
+                className="absolute inset-0 rounded-full"
+                style={{ backgroundColor: '#4F46E5' }}
+                initial={{ scale: 0, opacity: 0 }}
+                whileHover={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              />
+              <span className="relative z-10">View All Clients</span>
+              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              
+              {/* Glow Effect */}
+              <motion.div
+                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
+                style={{
+                  boxShadow: '0 0 20px rgba(79, 70, 229, 0.4)',
+                }}
+                transition={{ duration: 0.4 }}
+              />
+            </motion.button>
+          </Link>
+        </motion.div>
       </div>
+
+      <style>{`
+        @keyframes scroll-ltr {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
+        }
+        @keyframes scroll-rtl {
+          0% { transform: translateX(-33.333%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-scroll-ltr {
+          animation: scroll-ltr 30s linear infinite;
+          width: max-content;
+        }
+        .animate-scroll-rtl {
+          animation: scroll-rtl 30s linear infinite;
+          width: max-content;
+        }
+      `}</style>
     </section>
   );
 };

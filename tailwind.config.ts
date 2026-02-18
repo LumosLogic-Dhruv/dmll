@@ -80,10 +80,10 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 1px)",
-        sm: "calc(var(--radius) - 2px)",
-        xs: "2px",
+        lg: "0",
+        md: "0",
+        sm: "0",
+        xs: "0",
       },
       spacing: {
         '18': '4.5rem',

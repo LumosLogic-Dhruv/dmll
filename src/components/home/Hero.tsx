@@ -23,7 +23,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const },
     },
   };
 
@@ -91,9 +91,9 @@ const Hero = () => {
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-none"
             >
-              We Turn Ad Spend
+              A Digital Transformation
               <br />
-              <span className="text-muted-foreground">Into Measurable Revenue.</span>
+              <span className="text-muted-foreground">agency that drives end-to-end growth </span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -101,14 +101,14 @@ const Hero = () => {
               variants={itemVariants}
               className="text-base md:text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed"
             >
-              We manage paid campaigns, SEO, and conversion optimization
-              to increase your leads, lower acquisition costs, and scale revenue.
+              We blend strategic foresight, world class design, new technologies,
+               and actionable insights to provide value for our clients.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-16"
+              className="flex flex-col sm:flex-row gap-4"
             >
               <Button variant="cta" size="xl" asChild>
                 <Link to="/contact">
@@ -122,32 +122,6 @@ const Hero = () => {
                   View Case Studies
                 </Link>
               </Button>
-            </motion.div>
-
-            {/* Stats Row */}
-            <motion.div
-              variants={itemVariants}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            >
-              {[
-                { value: "$50M+", label: "Ad Spend Managed" },
-                { value: "312%", label: "Avg. ROAS Delivered" },
-                { value: "-41%", label: "Avg. CPA Reduction" },
-                { value: "500+", label: "Campaigns Optimized" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
             </motion.div>
           </motion.div>
 

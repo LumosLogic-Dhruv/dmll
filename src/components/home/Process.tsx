@@ -34,7 +34,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="section-padding bg-secondary/30 overflow-hidden">
+    <section className="py-12 md:py-16 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -42,7 +42,7 @@ const Process = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-12"
         >
           <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
             Campaign Workflow
@@ -58,56 +58,76 @@ const Process = () => {
 
         {/* Process Steps - Desktop */}
         <div className="hidden md:block relative">
-          {/* Connection Line */}
-          <div className="absolute top-16 left-0 right-0 h-px bg-border" />
+          {/* Background Line */}
+          <div className="absolute top-16 left-0 right-0 h-1 bg-border rounded-full" />
+          
+          {/* Animated Progress Line - Single Smooth Fill */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute top-16 left-0 right-0 h-px bg-foreground origin-left"
+            transition={{ 
+              duration: 4, 
+              delay: 0,
+              ease: "linear"
+            }}
+            className="absolute top-16 left-0 right-0 h-1 bg-foreground origin-left rounded-full"
             style={{ transformOrigin: "left" }}
           />
 
           <div className="grid grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="relative"
-              >
-                {/* Step Number Circle */}
-                <div className="relative z-10 mb-8">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.15, type: "spring" }}
-                    className="w-12 h-12 bg-background border-2 border-foreground rounded-full flex items-center justify-center mx-auto"
-                  >
-                    <span className="text-sm font-bold text-foreground">
-                      {step.number}
-                    </span>
-                  </motion.div>
-                </div>
-
-                {/* Content Card */}
-                <div className="text-center group">
-                  <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-border rounded group-hover:border-foreground/30 group-hover:bg-background transition-all">
-                    <step.icon className="w-6 h-6 text-foreground" />
+            {steps.map((step, index) => {
+              const stepDelay = index * 1; // Each step appears 1 second apart, starting immediately
+              
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: stepDelay, duration: 0.4 }}
+                  className="relative"
+                >
+                  {/* Step Number Circle */}
+                  <div className="relative z-10 mb-8">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ 
+                        delay: stepDelay, 
+                        duration: 0.4,
+                        ease: [0.4, 0, 0.2, 1]
+                      }}
+                      className="w-16 h-16 bg-background border-4 border-foreground rounded-full flex items-center justify-center mx-auto relative"
+                    >
+                      <span className="text-lg font-bold text-foreground relative z-10">
+                        {step.number}
+                      </span>
+                    </motion.div>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Content Card */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: stepDelay + 0.2, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                    className="text-center group"
+                  >
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-border rounded group-hover:border-foreground/30 group-hover:bg-background transition-all">
+                      <step.icon className="w-6 h-6 text-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 

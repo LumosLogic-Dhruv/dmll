@@ -5,96 +5,196 @@ import {
   MousePointerClick,
   EyeOff,
   TrendingDown,
+  TrendingUp,
   SearchX,
 } from "lucide-react";
 
-const problems = [
-  {
-    icon: DollarSign,
-    title: "High CPA eating your margins",
-    description:
-      "You're spending more to acquire each customer but revenue per customer hasn't changed. Your campaigns need restructuring, not more budget.",
-  },
-  {
-    icon: UserX,
-    title: "Leads that never convert to revenue",
-    description:
-      "Marketing reports show lead volume, but sales says they're unqualified. Your targeting, audiences, and lead scoring need alignment.",
-  },
-  {
-    icon: MousePointerClick,
-    title: "Traffic is up, conversions are flat",
-    description:
-      "You're driving visitors but they're not converting. Your landing pages, funnel, and offer positioning need optimization.",
-  },
-  {
-    icon: EyeOff,
-    title: "Your agency isn't transparent",
-    description:
-      "You get monthly decks but can't see what's actually happening in your ad accounts. You deserve real-time dashboards and weekly reporting.",
-  },
-  {
-    icon: TrendingDown,
-    title: "Ad performance plateaued",
-    description:
-      "Campaigns that used to work stopped scaling. Creative fatigue, audience saturation, and bid strategy need a reset.",
-  },
-  {
-    icon: SearchX,
-    title: "SEO isn't generating pipeline",
-    description:
-      "You've invested in content and keywords but organic traffic isn't turning into leads. Your SEO strategy needs commercial intent alignment.",
-  },
+const issues = [
+  { text: "High CPA eating margins", color: "#4285F4" },
+  { text: "Leads not converting", color: "#0081FB" },
+  { text: "Traffic up, conversions flat", color: "#0A66C2" },
+  { text: "Lack of transparency", color: "#FF7A59" },
+  { text: "Ad performance plateaued", color: "#96BF48" },
+  { text: "SEO not generating pipeline", color: "#FF9900" },
+  { text: "Poor ROAS", color: "#4285F4" },
+  { text: "Wasted ad spend", color: "#0081FB" },
+  { text: "Low engagement rates", color: "#0A66C2" },
+];
+
+const capabilities = [
+  { icon: DollarSign, text: "Performance Marketing" },
+  { icon: TrendingUp, text: "Conversion Optimization" },
+  { icon: SearchX, text: "SEO Strategy" },
+  { icon: MousePointerClick, text: "Paid Advertising" },
+  { icon: UserX, text: "Lead Generation" },
+  { icon: EyeOff, text: "Analytics & Reporting" },
 ];
 
 const ProblemsWeSolve = () => {
+  const firstRow = issues.slice(0, 5);
+  const secondRow = issues.slice(5, 9);
+  const duplicatedFirstRow = [...firstRow, ...firstRow, ...firstRow];
+  const duplicatedSecondRow = [...secondRow, ...secondRow, ...secondRow];
+
   return (
-    <section className="section-padding bg-background">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
+    <section className="section-padding-sm bg-gradient-to-b from-secondary/10 to-background overflow-hidden relative">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Issues Horizontal Scroll */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-16"
+          className="mb-12"
         >
-          <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
-            Sound Familiar?
-          </span>
-          <h2 className="text-display-sm md:text-display-md lg:text-display-lg text-foreground mb-6">
-            Marketing problems we solve every week
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+            Any of these issues sound familiar?
           </h2>
-          <p className="text-lg text-muted-foreground">
-            If any of these describe your situation, we've fixed it before —
-            with measurable results.
+          <div className="space-y-6">
+            {/* First Row - Right to Left */}
+            <div className="relative">
+              <div className="flex gap-6 animate-scroll-rtl">
+                {duplicatedFirstRow.map((issue, index) => (
+                  <motion.div
+                    key={`rtl-${index}`}
+                    className="issue-tag"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                  >
+                    <span>{issue.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            {/* Second Row - Left to Right */}
+            <div className="relative">
+              <div className="flex gap-6 animate-scroll-ltr">
+                {duplicatedSecondRow.map((issue, index) => (
+                  <motion.div
+                    key={`ltr-${index}`}
+                    className="issue-tag"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                  >
+                    <span>{issue.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Main Heading Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mb-12"
+        >
+          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-tight">
+            We solve challenges & help navigate change
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+            If any of these describe your situation, we've fixed it before — with measurable results.
           </p>
         </motion.div>
 
-        {/* Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={problem.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.08, duration: 0.5 }}
-              className="group p-6 bg-card border border-border rounded hover:border-foreground/20 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="w-10 h-10 flex items-center justify-center border border-border rounded mb-4 group-hover:border-foreground/30 group-hover:bg-secondary transition-all">
-                <problem.icon className="w-5 h-5 text-foreground" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">
-                {problem.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {problem.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Core Capabilities */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8">
+            Core capabilities
+          </h3>
+          <ul className="flex flex-row flex-wrap gap-3">
+            {capabilities.map((capability, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="capability-item"
+              >
+                <capability.icon className="w-4 h-4 me-3 text-foreground flex-shrink-0" />
+                <span className="text-sm md:text-base">
+                  {capability.text}
+                </span>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
+
+      <style>{`
+        .bg-grid-pattern {
+          background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+        .issue-tag {
+          position: relative;
+          padding: 0.75rem 1.5rem;
+          margin: 0.5rem;
+          border: 1px solid hsl(var(--border));
+          background: hsl(var(--background));
+          color: hsl(var(--foreground));
+          font-weight: normal;
+          font-size: 1.25rem;
+          line-height: 1;
+          white-space: nowrap;
+          transition: all 0.3s;
+          cursor: default;
+          flex-shrink: 0;
+          box-shadow: none;
+        }
+        @media (min-width: 1024px) {
+          .issue-tag {
+            padding: 1.5rem;
+            font-size: 1.5rem;
+          }
+        }
+        .capability-item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0.75rem;
+          border: 1px solid hsl(var(--border));
+          background: hsl(var(--card));
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          transition: all 0.3s;
+        }
+        @media (min-width: 768px) {
+          .capability-item {
+            padding: 1.25rem;
+          }
+        }
+        @keyframes scroll-rtl {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / 3)); }
+        }
+        @keyframes scroll-ltr {
+          0% { transform: translateX(calc(-100% / 3)); }
+          100% { transform: translateX(0); }
+        }
+        .animate-scroll-rtl {
+          animation: scroll-rtl 40s linear infinite;
+          width: max-content;
+        }
+        .animate-scroll-rtl:hover {
+          animation-play-state: paused;
+        }
+        .animate-scroll-ltr {
+          animation: scroll-ltr 40s linear infinite;
+          width: max-content;
+        }
+        .animate-scroll-ltr:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
