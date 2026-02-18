@@ -5,14 +5,17 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="section-padding bg-foreground relative overflow-hidden">
-      {/* Grid pattern */}
+    <section className="py-16 md:py-20 bg-foreground relative overflow-hidden">
+      {/* Digital Marketing Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(hsl(var(--background)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `
+              linear-gradient(hsl(var(--background)) 1px, transparent 1px),
+              linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
           }}
         />
       </div>

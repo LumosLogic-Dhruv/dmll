@@ -21,7 +21,7 @@ interface ParticleBackgroundProps {
 const ParticleBackground = ({
   particleCount = 50,
   className = "",
-  colors = ["rgba(0, 102, 255, 0.5)", "rgba(255, 107, 53, 0.3)"],
+  colors = ["rgba(8, 58, 79, 0.5)", "rgba(8, 58, 79, 0.3)"],
   speed = 0.5,
   connectDistance = 150,
 }: ParticleBackgroundProps) => {
@@ -85,7 +85,7 @@ const ParticleBackground = ({
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(other.x, other.y);
-            ctx.strokeStyle = `rgba(0, 102, 255, ${0.1 * (1 - distance / connectDistance)})`;
+            ctx.strokeStyle = `rgba(8, 58, 79, ${0.1 * (1 - distance / connectDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

@@ -11,7 +11,7 @@ const projects = [
     category: "Google Ads & Meta Ads",
     result: "+340% Revenue",
     description: "Campaign restructuring + shopping feed optimization for a DTC brand",
-    color: "from-electric to-electric-light",
+    color: "from-primary to-primary/80",
     metrics: { before: "50K", after: "220K", label: "Monthly Revenue" },
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     category: "Meta Ads & LinkedIn",
     result: "2M+ Impressions",
     description: "Retargeting layers + lookalike audiences to generate qualified pipeline",
-    color: "from-orange to-orange-light",
+    color: "from-primary to-primary/80",
     metrics: { before: "10K", after: "2M", label: "Monthly Reach" },
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     category: "SEO & Content",
     result: "500+ Qualified Leads",
     description: "Keyword clustering + funnel optimization driving inbound leads monthly",
-    color: "from-navy to-navy-light",
+    color: "from-primary to-primary/80",
     metrics: { before: "20", after: "500+", label: "Monthly Leads" },
   },
 ];
@@ -46,7 +46,7 @@ const PortfolioPreview = () => {
             Our Work
           </motion.span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Featured <span className="text-gradient-blue">Case Studies</span>
+            Featured <span className="text-primary">Case Studies</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Before and after campaign metrics. See the performance improvements we delivered.
@@ -72,7 +72,7 @@ const PortfolioPreview = () => {
                 <motion.div
                   className="absolute inset-0 opacity-10"
                   style={{
-                    backgroundImage: `radial-gradient(circle at 50% 50%, white 1px, transparent 1px)`,
+                    backgroundImage: `radial-gradient(circle at 50% 50%, hsl(var(--background)) 1px, transparent 1px)`,
                     backgroundSize: '20px 20px',
                   }}
                   animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
@@ -129,7 +129,7 @@ const PortfolioPreview = () => {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ExternalLink className="w-5 h-5 group-hover:text-navy" />
+                      <ExternalLink className="w-5 h-5 group-hover:text-primary" />
                     </motion.div>
                   </div>
                 </div>

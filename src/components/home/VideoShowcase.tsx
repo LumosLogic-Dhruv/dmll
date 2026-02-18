@@ -105,10 +105,10 @@ const VideoShowcase = () => {
             <div 
               className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none transition-opacity duration-500"
               style={{
-                background: 'linear-gradient(180deg, rgba(52,17,63,0.35) 0%, transparent 100%)'
+                background: 'linear-gradient(180deg, rgba(8, 58, 79, 0.35) 0%, transparent 100%)'
               }}
             >
-              <h2 className="text-white text-4xl md:text-5xl font-bold text-center px-4">
+              <h2 className="text-background text-4xl md:text-5xl font-bold text-center px-4">
                 See How We Create Growth
               </h2>
             </div>

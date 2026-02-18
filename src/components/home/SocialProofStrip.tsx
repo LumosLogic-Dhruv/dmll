@@ -24,7 +24,7 @@ const SocialProofStrip = () => {
   const duplicatedSecondRow = [...secondRow, ...secondRow, ...secondRow];
 
   return (
-    <section className="py-10 md:py-12 relative overflow-hidden" style={{ backgroundColor: '#141419' }}>
+    <section className="py-10 md:py-12 relative overflow-hidden bg-foreground">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -34,10 +34,10 @@ const SocialProofStrip = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider mb-2 block" style={{ color: '#B5B5C3' }}>
+          <span className="text-sm font-semibold uppercase tracking-wider mb-2 block text-background/70">
             Trusted by Industry Leaders
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 relative inline-block" style={{ color: '#FFFFFF' }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 relative inline-block text-background">
             Clients We Stand For
             
           </h2>
@@ -90,18 +90,12 @@ const SocialProofStrip = () => {
         >
           <Link to="/clients">
             <motion.button
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-base transition-all duration-400 relative overflow-hidden"
-              style={{
-                color: '#FFFFFF',
-                border: '1px solid #4F46E5',
-                backgroundColor: 'transparent',
-              }}
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-base transition-all duration-400 relative overflow-hidden text-background border border-primary bg-transparent"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <motion.span
-                className="absolute inset-0 rounded-full"
-                style={{ backgroundColor: '#4F46E5' }}
+                className="absolute inset-0 rounded-full bg-primary"
                 initial={{ scale: 0, opacity: 0 }}
                 whileHover={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.4 }}
@@ -111,10 +105,7 @@ const SocialProofStrip = () => {
               
               {/* Glow Effect */}
               <motion.div
-                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
-                style={{
-                  boxShadow: '0 0 20px rgba(79, 70, 229, 0.4)',
-                }}
+                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 shadow-xl"
                 transition={{ duration: 0.4 }}
               />
             </motion.button>

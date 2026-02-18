@@ -10,10 +10,10 @@ import {
 } from "@/components/animations";
 
 const stats = [
-  { icon: TrendingUp, value: 312, suffix: "%", label: "Avg. ROAS Delivered", color: "stroke-electric" },
-  { icon: Users, value: 500, suffix: "+", label: "Campaigns Optimized", color: "stroke-orange" },
-  { icon: Award, value: 41, suffix: "%", label: "Avg. CPA Reduction", color: "stroke-electric" },
-  { icon: Globe, value: 50, suffix: "M+", label: "Ad Spend Managed ($)", color: "stroke-orange" },
+  { icon: TrendingUp, value: 312, suffix: "%", label: "Avg. ROAS Delivered", color: "stroke-primary" },
+  { icon: Users, value: 500, suffix: "+", label: "Campaigns Optimized", color: "stroke-primary" },
+  { icon: Award, value: 41, suffix: "%", label: "Avg. CPA Reduction", color: "stroke-primary" },
+  { icon: Globe, value: 50, suffix: "M+", label: "Ad Spend Managed ($)", color: "stroke-primary" },
 ];
 
 const StatsCounter = () => {
@@ -25,7 +25,7 @@ const StatsCounter = () => {
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal animation="fadeUp" className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-            Campaign Performance <span className="text-gradient-orange">Metrics</span>
+            Campaign Performance <span className="text-primary-foreground/70">Metrics</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
             Aggregate results across all client campaigns we manage and optimize
@@ -54,7 +54,7 @@ const StatsCounter = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="w-16 h-16 rounded-2xl bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-                      <stat.icon className="w-8 h-8 text-electric" />
+                      <stat.icon className="w-8 h-8 text-primary" />
                     </div>
                   </motion.div>
                 </div>
@@ -80,7 +80,7 @@ const StatsCounter = () => {
               y1="60%"
               x2="75%"
               y2="60%"
-              stroke="rgba(255,255,255,0.1)"
+              stroke="rgba(229, 225, 221, 0.1)"
               strokeWidth="1"
               strokeDasharray="5,5"
               initial={{ pathLength: 0 }}

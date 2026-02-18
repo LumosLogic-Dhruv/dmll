@@ -58,7 +58,7 @@ const ServicesPreview = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#0F0F12' }}>
+    <section className="py-24 md:py-32 relative overflow-hidden bg-secondary">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -68,13 +68,13 @@ const ServicesPreview = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-20"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider mb-4 block" style={{ color: '#7A7A8C' }}>
+          <span className="text-sm font-semibold uppercase tracking-wider mb-4 block text-muted-foreground">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
             Comprehensive Solutions for Modern Brands
           </h2>
-          <p className="text-lg md:text-xl" style={{ color: '#B5B5C3' }}>
+          <p className="text-lg md:text-xl text-muted-foreground">
             Premium services designed to elevate your brand and drive measurable results.
           </p>
         </motion.div>
@@ -88,8 +88,7 @@ const ServicesPreview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="border-b cursor-pointer"
-              style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+              className="border-b cursor-pointer border-border"
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
               onClick={() => setActiveIndex(activeIndex === index ? null : index)}
@@ -97,7 +96,7 @@ const ServicesPreview = () => {
               <div
                 className="py-8 md:py-10 transition-all duration-500"
                 style={{
-                  backgroundColor: activeIndex === index ? '#1A1A22' : 'transparent',
+                  backgroundColor: activeIndex === index ? 'hsl(var(--secondary))' : 'transparent',
                   paddingLeft: activeIndex === index ? '2rem' : '0',
                   paddingRight: activeIndex === index ? '2rem' : '0',
                 }}
@@ -106,21 +105,19 @@ const ServicesPreview = () => {
                 <div className="flex items-center gap-6 md:gap-8 mb-2">
                   <motion.span
                     className="text-2xl md:text-3xl font-bold"
-                    style={{ color: '#7A7A8C' }}
                     animate={{
                       x: activeIndex === index ? 8 : 0,
-                      color: activeIndex === index ? '#4F46E5' : '#7A7A8C',
+                      color: activeIndex === index ? 'hsl(var(--primary))' : 'hsl(var(--foreground))',
                     }}
                     transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                   >
                     {service.number}
                   </motion.span>
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold relative inline-block" style={{ color: '#FFFFFF' }}>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold relative inline-block text-foreground">
                       {service.title}
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5"
-                        style={{ backgroundColor: '#4F46E5' }}
+                        className="absolute bottom-0 left-0 h-0.5 bg-primary"
                         initial={{ width: 0 }}
                         animate={{ width: activeIndex === index ? '100%' : 0 }}
                         transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
@@ -146,21 +143,16 @@ const ServicesPreview = () => {
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ duration: 0.5, delay: 0.1 }}
                         >
-                          <p className="text-lg leading-relaxed mb-8" style={{ color: '#B5B5C3' }}>
+                          <p className="text-lg leading-relaxed mb-8 text-muted-foreground">
                             {service.description}
                           </p>
                           <motion.button
-                            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-base transition-all duration-400 relative overflow-hidden"
-                            style={{
-                              color: '#FFFFFF',
-                              border: '1px solid #4F46E5',
-                            }}
+                            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-base transition-all duration-400 relative overflow-hidden text-primary-foreground border border-primary bg-primary hover:bg-primary/90"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                           >
                             <motion.span
-                              className="absolute inset-0 rounded-full"
-                              style={{ backgroundColor: '#4F46E5' }}
+                              className="absolute inset-0 rounded-full bg-primary"
                               initial={{ scale: 0, opacity: 0 }}
                               whileHover={{ scale: 1, opacity: 1 }}
                               transition={{ duration: 0.4 }}
@@ -175,22 +167,14 @@ const ServicesPreview = () => {
                           initial={{ scale: 0.9, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
                           transition={{ duration: 0.6, delay: 0.2 }}
-                          className="relative h-64 md:h-80 rounded-lg overflow-hidden"
-                          style={{
-                            boxShadow: '0 0 40px rgba(34, 211, 238, 0.1)',
-                          }}
+                          className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-xl"
                         >
                           <img
                             src={service.image}
                             alt={service.title}
                             className="w-full h-full object-cover"
                           />
-                          <div
-                            className="absolute inset-0"
-                            style={{
-                              background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%)',
-                            }}
-                          />
+                          <div className="absolute inset-0 bg-primary/10" />
                         </motion.div>
                       </div>
                     </motion.div>

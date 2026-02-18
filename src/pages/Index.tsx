@@ -9,7 +9,6 @@ import StickyScrollSection from "@/components/home/StickyScrollSection";
 import Process from "@/components/home/Process";
 import Industries from "@/components/home/Industries";
 import Testimonials from "@/components/home/Testimonials";
-import EngagementModel from "@/components/home/EngagementModel";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
@@ -25,7 +24,6 @@ const Index = () => {
       <Process />
       <Industries />
       <Testimonials />
-      <EngagementModel />
       <CTASection />
     </Layout>
   );

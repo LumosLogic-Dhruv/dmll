@@ -7,122 +7,122 @@
 
 @layer base {
   :root {
-    /* Premium Digital Marketing Agency Theme - Light Mode */
-    --background: 0 0% 100%;
-    --foreground: 274 65% 15%; /* #34113F Dark Amethyst */
+    /* Strict 2-Color Brand Identity - Light Mode */
+    --background: 36 13% 89%; /* #E5E1DD Secondary */
+    --foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --card: 0 0% 100%;
-    --card-foreground: 274 65% 15%;
+    --card: 36 13% 89%; /* #E5E1DD Secondary */
+    --card-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 274 65% 15%;
+    --popover: 36 13% 89%; /* #E5E1DD Secondary */
+    --popover-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --primary: 274 65% 15%; /* #34113F Dark Amethyst */
-    --primary-foreground: 0 0% 100%;
+    --primary: 198 72% 17%; /* #083A4F Primary */
+    --primary-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --secondary: 245 30% 88%; /* #beb7df Periwinkle */
-    --secondary-foreground: 274 65% 15%;
+    --secondary: 36 13% 89%; /* #E5E1DD Secondary */
+    --secondary-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --muted: 120 40% 92%; /* #d4f2d2 Frosted Mint */
-    --muted-foreground: 60 2% 51%; /* #868784 Grey Olive */
+    --muted: 36 13% 89%; /* #E5E1DD Secondary */
+    --muted-foreground: 198 72% 17% / 0.6; /* #083A4F Primary 60% */
 
-    --accent: 252 20% 82%; /* #aba9bf Lilac Ash */
-    --accent-foreground: 274 65% 15%;
+    --accent: 36 13% 89%; /* #E5E1DD Secondary */
+    --accent-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 198 72% 17%; /* #083A4F Primary */
+    --destructive-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --border: 252 20% 90%;
-    --input: 252 20% 90%;
-    --ring: 274 65% 15%;
+    --border: 198 72% 17% / 0.13; /* #083A4F Primary 13% */
+    --input: 36 13% 89%; /* #E5E1DD Secondary */
+    --ring: 198 72% 17%; /* #083A4F Primary */
 
     /* No rounded corners */
     --radius: 0rem;
 
     /* Glass effects */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-bg: rgba(229, 225, 221, 0.7);
+    --glass-border: rgba(8, 58, 79, 0.13);
     --glass-blur: 20px;
 
-    /* Premium Gradients - Agency Style */
-    --gradient-subtle: linear-gradient(135deg, #d4f2d2 0%, #beb7df 100%);
-    --gradient-shine: linear-gradient(135deg, #beb7df 0%, #aba9bf 50%, #d4f2d2 100%);
-    --gradient-glow: radial-gradient(ellipse at center, rgba(52, 17, 63, 0.05) 0%, transparent 70%);
-    --gradient-primary: linear-gradient(135deg, #34113f 0%, #5a1f6f 100%);
+    /* Premium Gradients - 2-Color Only */
+    --gradient-subtle: linear-gradient(135deg, #E5E1DD 0%, rgba(8, 58, 79, 0.05) 100%);
+    --gradient-shine: linear-gradient(135deg, #083A4F 0%, rgba(8, 58, 79, 0.8) 50%, #083A4F 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(8, 58, 79, 0.05) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(135deg, #083A4F 0%, rgba(8, 58, 79, 0.9) 100%);
 
-    /* Shadows - Premium & Sharp */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
-    --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.08);
-    --shadow-glow-accent: 0 0 30px rgba(0, 0, 0, 0.15);
+    /* Shadows - Primary Tinted */
+    --shadow-xs: 0 1px 2px rgba(8, 58, 79, 0.04);
+    --shadow-sm: 0 2px 4px rgba(8, 58, 79, 0.06);
+    --shadow-md: 0 4px 12px rgba(8, 58, 79, 0.08);
+    --shadow-lg: 0 8px 24px rgba(8, 58, 79, 0.1);
+    --shadow-xl: 0 16px 48px rgba(8, 58, 79, 0.12);
+    --shadow-glow: 0 0 40px rgba(8, 58, 79, 0.08);
+    --shadow-glow-accent: 0 0 30px rgba(8, 58, 79, 0.15);
 
     /* Sidebar */
-    --sidebar-background: 245 30% 95%;
-    --sidebar-foreground: 274 65% 15%;
-    --sidebar-primary: 274 65% 15%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 252 20% 88%;
-    --sidebar-accent-foreground: 274 65% 15%;
-    --sidebar-border: 252 20% 85%;
-    --sidebar-ring: 274 65% 15%;
+    --sidebar-background: 198 72% 17%; /* #083A4F Primary */
+    --sidebar-foreground: 36 13% 89%; /* #E5E1DD Secondary */
+    --sidebar-primary: 36 13% 89%; /* #E5E1DD Secondary */
+    --sidebar-primary-foreground: 198 72% 17%; /* #083A4F Primary */
+    --sidebar-accent: 198 72% 17% / 0.8; /* #083A4F Primary 80% */
+    --sidebar-accent-foreground: 36 13% 89%; /* #E5E1DD Secondary */
+    --sidebar-border: 198 72% 17% / 0.2; /* #083A4F Primary 20% */
+    --sidebar-ring: 36 13% 89%; /* #E5E1DD Secondary */
   }
 
   .dark {
-    /* Premium Digital Marketing Agency Theme - Dark Mode */
-    --background: 274 65% 8%;
-    --foreground: 0 0% 98%;
+    /* Strict 2-Color Brand Identity - Dark Mode */
+    --background: 198 72% 17%; /* #083A4F Primary */
+    --foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --card: 274 50% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 198 72% 17%; /* #083A4F Primary */
+    --card-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --popover: 274 50% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 198 72% 17%; /* #083A4F Primary */
+    --popover-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --primary: 245 30% 75%; /* Lighter Periwinkle for dark mode */
-    --primary-foreground: 274 65% 15%;
+    --primary: 36 13% 89%; /* #E5E1DD Secondary */
+    --primary-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --secondary: 274 40% 20%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 198 72% 17%; /* #083A4F Primary */
+    --secondary-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --muted: 274 30% 18%;
-    --muted-foreground: 252 15% 65%;
+    --muted: 198 72% 17%; /* #083A4F Primary */
+    --muted-foreground: 36 13% 89% / 0.6; /* #E5E1DD Secondary 60% */
 
-    --accent: 252 20% 25%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 198 72% 17%; /* #083A4F Primary */
+    --accent-foreground: 36 13% 89%; /* #E5E1DD Secondary */
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 36 13% 89%; /* #E5E1DD Secondary */
+    --destructive-foreground: 198 72% 17%; /* #083A4F Primary */
 
-    --border: 274 30% 22%;
-    --input: 274 30% 22%;
-    --ring: 245 30% 75%;
+    --border: 36 13% 89% / 0.13; /* #E5E1DD Secondary 13% */
+    --input: 198 72% 17%; /* #083A4F Primary */
+    --ring: 36 13% 89%; /* #E5E1DD Secondary */
 
     /* Glass effects - Dark */
-    --glass-bg: rgba(0, 0, 0, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(8, 58, 79, 0.6);
+    --glass-border: rgba(229, 225, 221, 0.13);
 
     /* Premium Gradients - Dark */
-    --gradient-subtle: linear-gradient(135deg, hsl(274 50% 12%) 0%, hsl(274 40% 10%) 100%);
-    --gradient-shine: linear-gradient(135deg, hsl(274 40% 15%) 0%, hsl(274 50% 12%) 50%, hsl(274 40% 15%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, rgba(190, 183, 223, 0.08) 0%, transparent 70%);
-    --gradient-primary: linear-gradient(135deg, #5a1f6f 0%, #34113f 100%);
+    --gradient-subtle: linear-gradient(135deg, #083A4F 0%, rgba(8, 58, 79, 0.8) 100%);
+    --gradient-shine: linear-gradient(135deg, rgba(8, 58, 79, 0.9) 0%, #083A4F 50%, rgba(8, 58, 79, 0.9) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(229, 225, 221, 0.08) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(135deg, rgba(8, 58, 79, 0.9) 0%, #083A4F 100%);
 
     /* Shadows - Dark */
-    --shadow-glow: 0 0 40px rgba(255, 255, 255, 0.03);
-    --shadow-glow-accent: 0 0 30px rgba(255, 255, 255, 0.08);
+    --shadow-glow: 0 0 40px rgba(229, 225, 221, 0.03);
+    --shadow-glow-accent: 0 0 30px rgba(229, 225, 221, 0.08);
 
     /* Sidebar - Dark */
-    --sidebar-background: 274 50% 10%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 245 30% 75%;
-    --sidebar-primary-foreground: 274 65% 15%;
-    --sidebar-accent: 274 40% 18%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 274 30% 20%;
-    --sidebar-ring: 245 30% 75%;
+    --sidebar-background: 36 13% 89%; /* #E5E1DD Secondary */
+    --sidebar-foreground: 198 72% 17%; /* #083A4F Primary */
+    --sidebar-primary: 198 72% 17%; /* #083A4F Primary */
+    --sidebar-primary-foreground: 36 13% 89%; /* #E5E1DD Secondary */
+    --sidebar-accent: 36 13% 89% / 0.8; /* #E5E1DD Secondary 80% */
+    --sidebar-accent-foreground: 198 72% 17%; /* #083A4F Primary */
+    --sidebar-border: 36 13% 89% / 0.2; /* #E5E1DD Secondary 20% */
+    --sidebar-ring: 198 72% 17%; /* #083A4F Primary */
   }
 }
 
@@ -284,7 +284,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23083A4F'/%3E%3C/svg%3E");
     opacity: 0.015;
     pointer-events: none;
   }
@@ -384,19 +384,19 @@
 
   /* Glow effects */
   .glow-sm {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(8, 58, 79, 0.05);
   }
 
   .dark .glow-sm {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+    box-shadow: 0 0 20px rgba(229, 225, 221, 0.03);
   }
 
   .glow-md {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 40px rgba(8, 58, 79, 0.08);
   }
 
   .dark .glow-md {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(229, 225, 221, 0.05);
   }
 
   /* Hover lift */

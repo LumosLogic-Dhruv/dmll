@@ -10,7 +10,7 @@ const MorphingBlobs = ({ variant = "hero" }: MorphingBlobsProps) => {
 
   const blobs = variant === "hero" ? [
     {
-      className: "absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[80px]",
+      className: "absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[80px]",
       animate: {
         scale: [1, 1.2, 1],
         x: [0, 50, 0],
@@ -20,7 +20,7 @@ const MorphingBlobs = ({ variant = "hero" }: MorphingBlobsProps) => {
       duration: 12,
     },
     {
-      className: "absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-orange/10 rounded-full blur-[60px]",
+      className: "absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[60px]",
       animate: {
         scale: [1, 1.1, 1],
         x: [0, -30, 0],
@@ -30,7 +30,7 @@ const MorphingBlobs = ({ variant = "hero" }: MorphingBlobsProps) => {
       duration: 10,
     },
     {
-      className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric/5 rounded-full blur-[100px]",
+      className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]",
       animate: {
         scale: [1, 1.15, 1],
         rotate: [0, 180, 360],
@@ -39,12 +39,12 @@ const MorphingBlobs = ({ variant = "hero" }: MorphingBlobsProps) => {
     },
   ] : [
     {
-      className: "absolute top-0 right-0 w-[300px] h-[300px] bg-electric/10 rounded-full blur-[60px]",
+      className: "absolute top-0 right-0 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[60px]",
       animate: { scale: [1, 1.1, 1], x: [0, 20, 0] },
       duration: 8,
     },
     {
-      className: "absolute bottom-0 left-0 w-[250px] h-[250px] bg-orange/8 rounded-full blur-[50px]",
+      className: "absolute bottom-0 left-0 w-[250px] h-[250px] bg-primary/8 rounded-full blur-[50px]",
       animate: { scale: [1, 1.2, 1], y: [0, -20, 0] },
       duration: 10,
     },

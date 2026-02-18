@@ -37,7 +37,7 @@ const Newsletter = () => {
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
-                <Mail className="w-8 h-8 text-electric" />
+                <Mail className="w-8 h-8 text-primary" />
               </motion.div>
 
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
@@ -57,7 +57,7 @@ const Newsletter = () => {
                   <motion.label
                     className={`absolute left-4 transition-all pointer-events-none ${
                       isFocused || email
-                        ? "top-0 -translate-y-1/2 text-xs bg-navy px-2 text-electric"
+                        ? "top-0 -translate-y-1/2 text-xs bg-primary px-2 text-primary-foreground"
                         : "top-1/2 -translate-y-1/2 text-primary-foreground/40"
                     }`}
                     animate={isFocused ? { scale: 0.9 } : { scale: 1 }}
@@ -70,7 +70,7 @@ const Newsletter = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
-                    className="h-14 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-transparent rounded-xl focus:border-electric transition-all"
+                    className="h-14 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-transparent rounded-xl focus:border-primary transition-all"
                   />
                 </motion.div>
 

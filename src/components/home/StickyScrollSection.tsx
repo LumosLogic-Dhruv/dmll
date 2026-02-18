@@ -96,7 +96,24 @@ const StickyScrollSection = () => {
           </div>
         </div>
 
-      
+        {/* Progress Bar */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+          {content.map((_, index) => (
+            <div
+              key={index}
+              className="h-1 w-16 bg-border rounded-full overflow-hidden"
+            >
+              <motion.div
+                className="h-full bg-primary"
+                initial={{ width: "0%" }}
+                animate={{
+                  width: activeIndex === index ? "100%" : "0%",
+                }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

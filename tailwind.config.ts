@@ -132,8 +132,8 @@ export default {
           "100%": { opacity: "1", filter: "blur(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 0, 0, 0.05)" },
-          "50%": { boxShadow: "0 0 40px rgba(0, 0, 0, 0.1)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(8, 58, 79, 0.05)" },
+          "50%": { boxShadow: "0 0 40px rgba(8, 58, 79, 0.1)" },
         },
         "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
