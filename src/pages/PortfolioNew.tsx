@@ -8,7 +8,6 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const industries = ["All", "E-commerce", "SaaS", "B2B", "Healthcare", "Local Business"];
 const services = ["All", "Google Ads", "Meta Ads", "SEO", "CRO", "Social Media"];
-const platforms = ["All", "Google", "Meta", "LinkedIn", "Organic"];
 
 interface Project {
   id: number;
@@ -241,14 +240,12 @@ const projects: Project[] = [
 const PortfolioNew = () => {
   const [activeIndustry, setActiveIndustry] = useState("All");
   const [activeService, setActiveService] = useState("All");
-  const [activePlatform, setActivePlatform] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects = projects.filter(project => {
     const matchesIndustry = activeIndustry === "All" || project.industry === activeIndustry;
     const matchesService = activeService === "All" || project.service === activeService;
-    const matchesPlatform = activePlatform === "All" || project.platform === activePlatform;
-    return matchesIndustry && matchesService && matchesPlatform;
+    return matchesIndustry && matchesService;
   });
 
   const featuredProject = projects.find(p => p.featured);
@@ -360,11 +357,11 @@ const PortfolioNew = () => {
       )}
 
       {/* Filters */}
-      <section className="py-8 bg-background sticky top-[72px] z-30 border-b border-border">
+      <section className="py-8 bg-background border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="space-y-4">
+          <div className="flex flex-col md:flex-row gap-6">
             {/* Industry Filter */}
-            <div>
+            <div className="flex-1">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Industry</div>
               <div className="flex flex-wrap gap-2">
                 {industries.map((industry) => (
@@ -383,52 +380,44 @@ const PortfolioNew = () => {
               </div>
             </div>
 
-            {/* Service & Platform Filters */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Service</div>
-                <div className="flex flex-wrap gap-2">
-                  {services.map((service) => (
-                    <button
-                      key={service}
-                      onClick={() => setActiveService(service)}
-                      className={`px-3 py-1.5 text-xs font-medium rounded transition-all duration-200 ${
-                        activeService === service
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-secondary text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      {service}
-                    </button>
-                  ))}
-                </div>
+            {/* Service Filter */}
+            <div className="flex-1">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Service</div>
+              <div className="flex flex-wrap gap-2">
+                {services.map((service) => (
+                  <button
+                    key={service}
+                    onClick={() => setActiveService(service)}
+                    className={`px-4 py-2 text-sm font-medium rounded transition-all duration-200 ${
+                      activeService === service
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {service}
+                  </button>
+                ))}
               </div>
+            </div>
 
-              <div>
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platform</div>
-                <div className="flex flex-wrap gap-2">
-                  {platforms.map((platform) => (
-                    <button
-                      key={platform}
-                      onClick={() => setActivePlatform(platform)}
-                      className={`px-3 py-1.5 text-xs font-medium rounded transition-all duration-200 ${
-                        activePlatform === platform
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-secondary text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      {platform}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            {/* Clear Filters */}
+            <div className="flex items-end">
+              <button
+                onClick={() => {
+                  setActiveIndustry("All");
+                  setActiveService("All");
+                }}
+                className="px-4 py-2 text-sm font-medium rounded border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all duration-200"
+              >
+                Clear All
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
@@ -602,25 +591,23 @@ const PortfolioNew = () => {
       </Dialog>
 
       {/* CTA */}
-      <section className="section-padding bg-primary">
+      <section className="py-12 md:py-16 bg-primary">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto"
+            className="text-center max-w-xl mx-auto"
           >
-            <h2 className="text-display-sm md:text-display-md text-primary-foreground mb-6">
-              Ready to be our
-              <br />
-              next success story?
+            <h2 className="text-2xl md:text-3xl text-primary-foreground mb-4">
+              Ready to be our next success story?
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8">
+            <p className="text-primary-foreground/80 mb-6">
               Get a free campaign audit and see where your marketing performance can improve.
             </p>
             <Button
               variant="secondary"
-              size="xl"
+              size="lg"
               className="bg-background text-foreground hover:bg-background/90"
               asChild
             >

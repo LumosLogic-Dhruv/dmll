@@ -66,7 +66,7 @@ const ServicesPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-20"
+          className="max-w-3xl mb-20 mx-auto text-center"
         >
           <span className="text-sm font-semibold uppercase tracking-wider mb-4 block text-muted-foreground">
             Our Services

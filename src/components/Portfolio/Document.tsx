@@ -279,72 +279,40 @@ export default function DocumentsPage() {
         </section>
 
         {/* Document Stats */}
-        <section className="py-12 relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }} />
-          </div>
-          
-          <div className="container mx-auto px-4 relative">
-            <motion.div
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="mb-8">
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+              {/* Left Side - Text Content */}
+              <div className="flex-1 text-center lg:text-left">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
                   Knowledge at Your Fingertips
                 </h2>
-                <p className="text-muted-foreground max-w-xl mx-auto">
+                <p className="text-muted-foreground leading-relaxed">
                   Access our comprehensive library of digital marketing resources, case studies, and industry insights.
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                {[
-                  { icon: FileText, number: "60+", label: "Total Documents" },
-                  { icon: Download, number: "15K+", label: "Downloads" },
-                  { icon: Clock, number: "Weekly", label: "New Content" },
-                  { icon: Folder, number: "8", label: "Categories" }
-                ].map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    custom={i}
-                    className="group relative"
-                  >
-                    {/* Animated Background Circle */}
-                    <motion.div 
-                      className="absolute inset-0 bg-primary/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"
-                      whileHover={{ scale: 1.2, opacity: 0.1 }}
-                    />
-                    
-                    <div className="relative p-4">
-                      <motion.div 
-                        className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-all duration-300"
-                        whileHover={{ rotate: 5 }}
-                      >
-                        <stat.icon className="w-6 h-6 text-primary" />
-                      </motion.div>
-                      <motion.div 
-                        className="text-2xl md:text-3xl font-bold text-foreground mb-1"
-                        whileHover={{ scale: 1.05 }}
-                      >
+              {/* Right Side - Statistics */}
+              <div className="flex-shrink-0">
+                <div className="grid grid-cols-4 gap-8">
+                  {[
+                    { number: "60+", label: "Total Documents" },
+                    { number: "15K+", label: "Downloads" },
+                    { number: "Weekly", label: "New Content" },
+                    { number: "8", label: "Categories" }
+                  ].map((stat, i) => (
+                    <div key={stat.label} className="text-center">
+                      <div className="text-2xl font-bold text-foreground mb-1">
                         {stat.number}
-                      </motion.div>
-                      <div className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</div>
+                      </div>
+                      <div className="text-xs text-muted-foreground font-medium">
+                        {stat.label}
+                      </div>
                     </div>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

@@ -54,9 +54,10 @@ const Process = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isInView) return;
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => {
@@ -72,13 +73,13 @@ const Process = () => {
         });
         return next;
       });
-    }, 2500);
+    }, 1800);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, isInView]);
 
   return (
-    <section className="py-20 md:py-28 bg-secondary/30 overflow-hidden">
+    <section className="py-8 md:py-10 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -86,7 +87,8 @@ const Process = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          onViewportEnter={() => setIsInView(true)}
+          className="text-center max-w-2xl mx-auto mb-8"
         >
           <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
             How We Work

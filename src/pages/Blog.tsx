@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/layout/Layout";
-import { Search, Calendar, Clock, ArrowRight, Play } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const categories = ["All", "Performance Marketing", "SEO", "Social Media", "Content", "Analytics"];
 
@@ -117,13 +116,10 @@ const blogPosts = [
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = activeCategory === "All" || post.category === activeCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory;
   });
 
   const featuredPost = blogPosts.find(post => post.featured);
@@ -158,51 +154,42 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Search & Filter */}
-      <section className="py-8 bg-background sticky top-[72px] z-30 border-b border-border">
+      {/* Filter */}
+      <section className="py-8 bg-background border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Search */}
-            <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 text-sm font-medium rounded transition-all duration-200 ${
-                    activeCategory === category
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2 justify-start">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 text-sm font-medium rounded transition-all duration-200 ${
+                  activeCategory === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+            <button
+              onClick={() => setActiveCategory("All")}
+              className="px-4 py-2 text-sm font-medium rounded border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all duration-200"
+            >
+              Clear All
+            </button>
           </div>
         </div>
       </section>
 
       {/* Featured Post */}
-      {featuredPost && activeCategory === "All" && !searchQuery && (
+      {featuredPost && activeCategory === "All" && (
         <section className="section-padding-xs bg-secondary/30">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8"
+              className="mb-4"
             >
               <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                 Featured Article
@@ -271,8 +258,24 @@ const Blog = () => {
       )}
 
       {/* Blog Grid */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
+          {/* Section Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              More Articles
+            </h2>
+            <p className="text-muted-foreground">
+              Explore our latest insights and strategies
+            </p>
+          </motion.div>
+
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
               {regularPosts.map((post, index) => (
@@ -358,27 +361,25 @@ const Blog = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="section-padding bg-primary">
+      <section className="py-12 md:py-16 bg-primary">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto"
+            className="text-center max-w-xl mx-auto"
           >
-            <h2 className="text-display-sm md:text-display-md text-primary-foreground mb-4">
-              Get marketing insights
-              <br />
-              in your inbox
+            <h2 className="text-2xl md:text-3xl text-primary-foreground mb-4">
+              Get marketing insights in your inbox
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8">
+            <p className="text-primary-foreground/80 mb-6">
               Weekly tactical guides on paid ads, SEO, and conversion optimization.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
+              <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-background/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                className="flex-1 h-10 px-3 py-2 rounded-md border bg-background/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
               />
               <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90">
                 Subscribe

@@ -36,10 +36,11 @@ const testimonials = [
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isInView, setIsInView] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || !isInView) return;
 
     const interval = setInterval(() => {
       setProgress((prev) => {
@@ -47,12 +48,12 @@ const Testimonials = () => {
           setActiveIndex((current) => (current + 1) % testimonials.length);
           return 0;
         }
-        return prev + 2;
+        return prev + 3;
       });
-    }, 60);
+    }, 40);
 
     return () => clearInterval(interval);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, isInView]);
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
@@ -69,6 +70,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
+          onViewportEnter={() => setIsInView(true)}
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 block">
