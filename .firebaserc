@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "orvix-e3c9e"
-  }
+  },
+  "targets": {
+    "orvix-e3c9e": {
+      "hosting": {
+        "main": [
+          "orvix-e3c9e"
+        ],
+        "subsite": [
+          "v2dmll"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
