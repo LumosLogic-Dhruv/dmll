@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import ClientDropdown from "@/components/Client/ClientDropdown";
+import PortfolioDropdown from "@/components/Portfolio/PortfolioDropdown";
 import { useTheme } from "next-themes";
 import {
   Target,
@@ -26,17 +28,21 @@ import {
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services", hasMegaMenu: true },
-  { name: "Case Studies", path: "/portfolio" },
+  { name: "Portfolio", path: "/portfolio", hasDropdown: true, isPortfolio: true },
   { name: "Clients", path: "/clients", hasDropdown: true },
   { name: "About", path: "/about" },
-  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 const clientsDropdown = [
-  { name: "Testimonials", path: "/clients#testimonials" },
-  { name: "Video Testimonials", path: "/clients#video-testimonials" },
-  { name: "Work", path: "/portfolio" },
-  { name: "Website Makeovers", path: "/portfolio#makeovers" },
+  { name: "Website Makeovers", path: "/client/website-makeovers" },
+  { name: "Work", path: "/client/work" },
+  { name: "Video Testimonials", path: "/client/video-testimonials" },
+  { name: "Testimonials", path: "/client/testimonials" },
+];
+const portfolioDropdown = [
+  { name: "Case Studies", path: "/portfolio" },
+  { name: "Blog", path: "/blog" },
+  { name: "Documents", path: "/documents" },
 ];
 const serviceCategories = [
   {
@@ -173,6 +179,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isClientsDropdownOpen, setIsClientsDropdownOpen] = useState(false);
+  const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
   const { theme } = useTheme();
   const location = useLocation();
@@ -180,6 +187,8 @@ const Navbar = () => {
   const servicesLinkRef = useRef<HTMLAnchorElement>(null);
   const clientsDropdownRef = useRef<HTMLDivElement>(null);
   const clientsLinkRef = useRef<HTMLAnchorElement>(null);
+  const portfolioDropdownRef = useRef<HTMLDivElement>(null);
+  const portfolioLinkRef = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -191,6 +200,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
     setIsClientsDropdownOpen(false);
+    setIsPortfolioDropdownOpen(false);
   }, [location]);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -263,56 +273,71 @@ const Navbar = () => {
                 ) : link.hasDropdown ? (
                   <div className="relative">
                     {" "}
-                    <a
-                      ref={clientsLinkRef}
-                      href={link.path}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsClientsDropdownOpen(!isClientsDropdownOpen);
-                      }}
-                      onMouseEnter={() => setIsClientsDropdownOpen(true)}
-                      onMouseLeave={() => {
-                        setTimeout(() => {
-                          if (!clientsDropdownRef.current?.matches(":hover")) {
-                            setIsClientsDropdownOpen(false);
-                          }
-                        }, 100);
-                      }}
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-200 link-underline ${location.pathname === link.path || isClientsDropdownOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-                    >
-                      {" "}
-                      {link.name}{" "}
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${isClientsDropdownOpen ? "rotate-180" : ""}`}
-                      />{" "}
-                    </a>{" "}
-                    <AnimatePresence>
-                      {" "}
-                      {isClientsDropdownOpen && (
-                        <motion.div
-                          ref={clientsDropdownRef}
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          onMouseEnter={() => setIsClientsDropdownOpen(true)}
-                          onMouseLeave={() => setIsClientsDropdownOpen(false)}
-                          className="absolute top-full left-0 mt-2 w-56 bg-background/95 backdrop-blur-xl border border-border rounded shadow-xl py-2"
+                    {link.isPortfolio ? (
+                      <>
+                        <a
+                          ref={portfolioLinkRef}
+                          href={link.path}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen);
+                          }}
+                          onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+                          onMouseLeave={() => {
+                            setTimeout(() => {
+                              if (!portfolioDropdownRef.current?.matches(":hover")) {
+                                setIsPortfolioDropdownOpen(false);
+                              }
+                            }, 100);
+                          }}
+                          className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-200 link-underline ${location.pathname === link.path || isPortfolioDropdownOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
                         >
                           {" "}
-                          {clientsDropdown.map((item) => (
-                            <Link
-                              key={item.path}
-                              to={item.path}
-                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                            >
-                              {" "}
-                              {item.name}{" "}
-                            </Link>
-                          ))}{" "}
-                        </motion.div>
-                      )}{" "}
-                    </AnimatePresence>{" "}
+                          {link.name}{" "}
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${isPortfolioDropdownOpen ? "rotate-180" : ""}`}
+                          />{" "}
+                        </a>{" "}
+                        <PortfolioDropdown
+                          isOpen={isPortfolioDropdownOpen}
+                          dropdownRef={portfolioDropdownRef}
+                          onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+                          onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
+                        />{" "}
+                      </>
+                    ) : (
+                      <>
+                        <a
+                          ref={clientsLinkRef}
+                          href={link.path}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsClientsDropdownOpen(!isClientsDropdownOpen);
+                          }}
+                          onMouseEnter={() => setIsClientsDropdownOpen(true)}
+                          onMouseLeave={() => {
+                            setTimeout(() => {
+                              if (!clientsDropdownRef.current?.matches(":hover")) {
+                                setIsClientsDropdownOpen(false);
+                              }
+                            }, 100);
+                          }}
+                          className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-200 link-underline ${location.pathname === link.path || isClientsDropdownOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                        >
+                          {" "}
+                          {link.name}{" "}
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${isClientsDropdownOpen ? "rotate-180" : ""}`}
+                          />{" "}
+                        </a>{" "}
+                        <ClientDropdown
+                          isOpen={isClientsDropdownOpen}
+                          dropdownRef={clientsDropdownRef}
+                          onMouseEnter={() => setIsClientsDropdownOpen(true)}
+                          onMouseLeave={() => setIsClientsDropdownOpen(false)}
+                        />{" "}
+                      </>
+                    )}
                   </div>
                 ) : (
                   <Link
@@ -571,7 +596,7 @@ const Navbar = () => {
                         </AnimatePresence>{" "}
                       </div>
                     ) : link.hasDropdown ? (
-                      <div className="border-b border-border">
+                      <div className="border-b border-border ">
                         {" "}
                         <button
                           onClick={() =>
@@ -595,12 +620,12 @@ const Navbar = () => {
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="overflow-hidden"
+                              className="overflow-hidden "
                             >
                               {" "}
-                              <div className="pb-4 space-y-2">
+                              <div className="pb-4 space-y-2 ">
                                 {" "}
-                                {clientsDropdown.map((item) => (
+                                {(link.name === "Portfolio" ? portfolioDropdown : clientsDropdown).map((item) => (
                                   <Link
                                     key={item.path}
                                     to={item.path}

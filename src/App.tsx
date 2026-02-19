@@ -17,6 +17,13 @@ import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
 import Clients from "./pages/Clients";
 import Blog from "./pages/Blog";
+import DocumentsPage from "./components/Portfolio/Document";
+
+// Client Sub-pages
+import WebsiteMakeovers from "./pages/client/WebsiteMakeovers";
+import Work from "./pages/client/Work";
+import VideoTestimonials from "./pages/client/VideoTestimonials";
+import Testimonials from "./pages/client/Testimonials";
 import BlogDetail from "./pages/BlogDetail";
 import SEOAudit from "./pages/SEOAudit";
 
@@ -50,6 +57,7 @@ const App = () => (
             <Route path="/services" element={<ServicesNew />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portfolio" element={<PortfolioNew />} />
+            <Route path="/documents" element={<DocumentsPage />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -87,6 +95,12 @@ const App = () => (
 
             <Route path="/services/analytics" element={<AnalyticsCRO />} />
             <Route path="/services/analytics-cro" element={<AnalyticsCRO />} />
+
+            {/* Client Sub-pages */}
+            <Route path="/client/website-makeovers" element={<WebsiteMakeovers />} />
+            <Route path="/client/work" element={<Work />} />
+            <Route path="/client/video-testimonials" element={<VideoTestimonials />} />
+            <Route path="/client/testimonials" element={<Testimonials />} />
 
             {/* Insights/Blog routes */}
             <Route path="/insights" element={<Insights />} />
